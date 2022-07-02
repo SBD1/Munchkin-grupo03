@@ -1,7 +1,7 @@
 # Modelo de Diagrama Relacionamento
 
 <div align="center">
-    <img src="/../assets/images/DER.png">
+    <img src="../../assets/images/DER.png">
 </div>
 
 ## Versionamento
