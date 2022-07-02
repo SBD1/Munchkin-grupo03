@@ -2,7 +2,7 @@
 
 ## Sobre
 <div align="center">
-    <img src="/../assets/images/Logo.png" width="400">
+    <img src="https://raw.githubusercontent.com/SBD1/Munchkin/main/docs/assets/images/Logo.png" width="400">
 </div>
 
 #
