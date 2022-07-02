@@ -4,8 +4,9 @@
 
 #
 
-## 🎯 Objeivo
-Este projeto tem como objetivo principal ser objeto de avaliação pelo professor na disciplina de Sistemas de Bancos de Dados I ministrada na Universidade de Brasília Campus Gama - FGA.
+## 🎯 Objetivo
+
+Este projeto tem como objetivo principal ser objeto de avaliação pelo professor na disciplina de Sistemas de Bancos de Dados I ministrada na Universidade de Brasília, Campus Gama - FGA.
 
 ## 🦸‍♀️ Inspiracoes
 
@@ -25,6 +26,7 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 </div>
 
 ## 🧙 Devs
+
 - @Matheuspleal
 - @LuizPettengill
 - @francisco1code
