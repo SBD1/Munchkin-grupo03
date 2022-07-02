@@ -1,6 +1,6 @@
 # Modelo Entidade-Relacionamento
 
-## Entidades:
+## Entidades
 - Personagem
 - Mochila	
 - Item
@@ -9,7 +9,7 @@
 - Monstro
 - Sala
 
-## Atributos:
+## Atributos
 - Personagem = {**id**, Nome, Sexo, Raça, Classe, Nível, Força de Combate, Equipados: [Cabeça, Mão Direita, Mão Esquerda, Duas Mãos, Armadura, Pés]}
 - Mochila = {**id**, Capacidade}
 - Item = {**Nome**, Valor, Bônus}
@@ -18,7 +18,7 @@
 - Monstro = {**Nome**, Nível, Drops, Quantidade de níveis ganhos ao derrotar}
 - Sala = {**Nome**}
 
-## Relacionamentos:
+## Relacionamentos
 
 Personagem _Carrega_ Mochila
 - Um Personagem pode _carregar_ uma Mochila, e uma Mochila pode ser _carregada_ por um personagem (1:1)

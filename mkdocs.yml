@@ -1,0 +1,21 @@
+site_name: Munchkin
+repo_url: https://github.com/SBD1/Munchkin
+
+extra_css: 
+        - assets/stylesheets/extra.css
+
+theme:
+        name: material
+        language: pt
+        features:
+                - navigation.tabs
+
+nav:
+        - Home: index.md
+        - Módulo 1:
+            - Modelagem:
+                    - MER: MER/MER_Munchkin.md
+                    - DER: DER/DER_Munchkin.md
+                    
+                    
+                  
