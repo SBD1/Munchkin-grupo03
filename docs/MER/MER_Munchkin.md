@@ -36,10 +36,10 @@ Mochila _contém_ Item
 - Mochila pode _conter_ um ou vários Item, e um ou vários Item pode estar _contido_ em uma Mochila (1:n)
 
 Sala _Possui_ Personagem
-- Sala pode _possuir_ um personagem, e um personagem pode _estar_ a sala (1:0, 1)
+- Sala pode _possuir_ um personagem, e um personagem pode _estar_ a sala (1, 1)
 
 Sala _Possui_ Item
-- Sala pode _possuir_ nenhum ou vários Item, e um ou vários Item pode _estar_ na sala (1:0, n)
+- Sala pode _possuir_ nenhum ou vários Item, e um ou vários Item pode _estar_ na sala (1, n)
   
 Sala _Possui_ Monstro
-- Sala pode _possuir_ nenhum ou vários Monstro, e um ou vários Monstro pode _estar_ na sala (1:0, n)
+- Sala pode _possuir_ nenhum ou vários Monstro, e um ou vários Monstro pode _estar_ na sala (1, n)
