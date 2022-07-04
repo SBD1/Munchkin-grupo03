@@ -48,5 +48,5 @@ Sala _Possui_ Monstro
 
 | Data       | Versão | Descrição                    | Autor                |
 | ---------- | ------ | --------------------------   | ---------------------|
-| 01/07/2022 | 1.0    | Adiciona o MER     | Francisco Emanoel |
+| 01/07/2022 | 1.0    | Adiciona o MER     | Francisco Emanoel, Matheus Pimentel |
 | 02/07/2022 | 1.1    | Revisa o documento | Ítalo Alves     |
