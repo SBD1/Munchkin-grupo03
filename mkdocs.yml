@@ -9,6 +9,9 @@ theme:
         language: pt
         features:
                 - navigation.tabs
+        palette:
+                primary: teal
+                accent: cyan
 
 nav:
         - Home: index.md

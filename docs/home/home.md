@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="/../assets/images/Logo.png" width="400">
+    <img src="../assets/images/Logo.png" width="400">
 </div>
 
 #
@@ -8,7 +8,7 @@
 
 Este projeto tem como objetivo principal ser objeto de avaliação pelo professor na disciplina de Sistemas de Bancos de Dados I ministrada na Universidade de Brasília, Campus Gama - FGA.
 
-## 🦸‍♀️ Inspiracoes
+## 🦸‍♀️ Inspirações
 
 - [Munchkin](https://munchkin.game/)
 - [Darkest Dungeon](https://www.wikiwand.com/en/Darkest_Dungeon)
