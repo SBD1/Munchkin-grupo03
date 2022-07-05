@@ -34,8 +34,8 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 
 | Foto | Nome | Github |
 |:--:|:--:|:--:|
-|<img width="100px" style="border-radius:10%" src="../assets/team/Matheus.jpeg">|<a href="https://github.com/Matheuspleal"style="text-decoration:none">Matheus Pimentel Leal</a>| Matheuspleal |
-|<img width="100px" style="border-radius:10%" src="../assets/team/Luiz.jpeg">|<a href="https://github.com/LuizPettengill" style="text-decoration:none">Luiz Pettengill</a>| LuizPettengill |
-|<img width="100px" style="border-radius:10%" src="../assets/team/Francisco.jpeg">|<a href="https://github.com/Francisco1code" style="text-decoration:none">Francisco Emanoel Ferreira</a>| Francisco1code |
-|<img width="100px" style="border-radius:10%" src="../assets/team/yukio.jpeg">|<a href="https://github.com/Yukioz" style="text-decoration:none">Victor Yukio</a>| Yukioz
-|<img width="100px" style="border-radius:10%" src="../assets/team/Italo.jpeg">|<a href="https://github.com/alvesitalo" style="text-decoration:none">Ítalo Alves</a>| alvesitalo
+|<img width="100px" style="border-radius:10%" src="./assets/team/Matheus.jpeg">|<a href="https://github.com/Matheuspleal"style="text-decoration:none">Matheus Pimentel Leal</a>| Matheuspleal |
+|<img width="100px" style="border-radius:10%" src="./assets/team/Luiz.jpeg">|<a href="https://github.com/LuizPettengill" style="text-decoration:none">Luiz Pettengill</a>| LuizPettengill |
+|<img width="100px" style="border-radius:10%" src="./assets/team/Francisco.jpeg">|<a href="https://github.com/Francisco1code" style="text-decoration:none">Francisco Emanoel Ferreira</a>| Francisco1code |
+|<img width="100px" style="border-radius:10%" src="./assets/team/yukio.jpeg">|<a href="https://github.com/Yukioz" style="text-decoration:none">Victor Yukio</a>| Yukioz
+|<img width="100px" style="border-radius:10%" src="./assets/team/Italo.jpeg">|<a href="https://github.com/alvesitalo" style="text-decoration:none">Ítalo Alves</a>| alvesitalo
