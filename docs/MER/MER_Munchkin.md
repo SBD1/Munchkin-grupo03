@@ -44,9 +44,16 @@ Sala _Possui_ Item
 Sala _Possui_ Monstro
 - Sala pode _possuir_ nenhum ou vários Monstro, e um ou vários Monstro pode _estar_ na sala (1, n)
 
+## Vídeo de apresentação
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VVhO_axioWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
 ## Versionamento
 
 | Data       | Versão | Descrição                    | Autor                |
 | ---------- | ------ | --------------------------   | ---------------------|
 | 01/07/2022 | 1.0    | Adiciona o MER     | Francisco Emanoel, Matheus Pimentel |
 | 02/07/2022 | 1.1    | Revisa o documento | Ítalo Alves     |
+| 04/07/2022 | 1.1    | Vídeo do documento | Victor Yukio, Matheus Pimentel, Fancisco Ferreira, Ítalo Alves, Luiz Pettengil     |
