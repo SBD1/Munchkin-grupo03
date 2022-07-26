@@ -1,0 +1,14 @@
+Spawn na guilda (Taverna):
+	Npc fala com o player
+		Quadro de missões
+		...
+Mundo aberto
+	sua missao é ali naquele lugar x, va ate o lugar x para fazer a coisa y
+	explorar...
+	(comando ajuda: mostrar os principais comandos, mostrar opções disponíveis no momento)
+	Lojistas
+	Entidade sala seria a unidade básica do jogo ("quadrado") onde o jogador pode andar, interagir com coisas ao redor que estão naquele quadrado
+	Npc de diálogo (pensar em um nome melhor)
+		Tabela com diálogos possíveis para aquele NPC
+	World quest (quests)
+	Quests opcionais
