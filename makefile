@@ -6,6 +6,7 @@ up:
 	docker-compose -f ${dkc} up
 
 build:
+	docker network create munchkin
 	docker-compose -f ${dkc} build
 
 
