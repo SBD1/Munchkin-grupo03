@@ -17,4 +17,5 @@ clean:
 	@echo "Containers Docker foram parados e deletados."
 
 migrate:
-	docker exec back npm run migrate:create
+	docker cp backend/src/game/ddl.sql db:/
+	docker exec db  psql -U postgres postgres -f ddl.sql -o n.out -q teste
