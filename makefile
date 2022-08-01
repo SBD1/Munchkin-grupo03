@@ -19,4 +19,7 @@ clean:
 
 migrate:
 	docker cp backend/src/game/ddl.sql db:/
+	docker cp backend/src/game/dml.sql db:/
 	docker exec db  psql -U postgres postgres -f ddl.sql -o n.out -q teste
+	docker exec db  psql -U postgres postgres -f dml.sql -o n.out -q teste
+
