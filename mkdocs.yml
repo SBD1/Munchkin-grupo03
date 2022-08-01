@@ -21,7 +21,7 @@ nav:
                 - DER: DER/DER_Munchkin.md
     - Modulo 2:
           - Modelagem:
-                - MER: MER/MER_Munchkin.md
+                - MER: MER/MERv2_Munchkin.md
                 - DER: DER/DERv2_Munchkin.md
           - SQL:
                 - DDL: SQL/ddl.sql
