@@ -2,30 +2,30 @@ site_name: Munchkin
 repo_url: https://github.com/SBD1/Munchkin
 
 extra_css: 
-        - assets/stylesheets/extra.css
+    - assets/stylesheets/extra.css
 
 theme:
-        name: material
-        language: pt
-        features:
-                - navigation.tabs
-        palette:
-                primary: teal
-                accent: cyan
+    name: material
+    language: pt
+    features:
+        - navigation.tabs
+    palette:
+        primary: teal
+        accent: cyan
 
 nav:
-        - Home: index.md
-        - Módulo 1:
-            - Modelagem:
-                    - MER: MER/MER_Munchkin.md
-                    - DER: DER/DER_Munchkin.md
-        - Modulo 2:
-                - Modelagem:
-                    - MER: MER/MER_munchkin.md
-                    - DER: DER/DERv2_munchkin.md
-				- SQL:
-					- DDL: backend/src/game/ddl.sql
-					- DML: backend/src/game/dml.sql
+    - Home: index.md
+    - Módulo 1:
+        - Modelagem:
+            - MER: MER/MER_Munchkin.md
+            - DER: DER/DER_Munchkin.md
+    - Modulo 2:
+        - Modelagem:
+            - MER: MER/MER_munchkin.md
+            - DER: DER/DERv2_munchkin.md
+		- SQL:
+			- DDL: ../backend/src/game/ddl.sql
+			- DML: ../backend/src/game/dml.sql
                     
                     
                   
