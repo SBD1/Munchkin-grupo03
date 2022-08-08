@@ -20,17 +20,17 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 
 O projeto conta com um makefile. Para rodar o projeto, o pacote [make](https://www.wikiwand.com/en/Make_(software)) deve estar instalado na máquina.
 
-'''sh
+```sh
 docker network create munchkin
-'''
+```
 
-'''sh
+```sh
 make up
-'''
+```
 
-'''sh
+```sh
 make migrate
-'''
+```
 
 ## 🦹‍♀️ Tecnologias
 
