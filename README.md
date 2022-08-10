@@ -18,19 +18,24 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 
 ## 🧝 Como jogar?
 
-O projeto conta com um makefile. Para rodar o projeto, o pacote [make](https://www.wikiwand.com/en/Make_(software)) deve estar instalado na máquina.
+O projeto conta com um makefile. Para rodar o projeto, o pacote [make](https://www.wikiwand.com/en/Make_(software)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/).
+
+Crie a rede interna do docker
 
 ```sh
 docker network create munchkin
 ```
+Rode o comando _*up*_ com o pacote make.
 
 ```sh
 make up
 ```
+Rode o comando _*migrate*_ com o pacote make.
 
 ```sh
 make migrate
 ```
+Agora com o banco de dados inicializado, ...
 
 ## 🦹‍♀️ Tecnologias
 
