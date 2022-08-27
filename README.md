@@ -19,7 +19,7 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 ## 🧝 Como jogar?
 
 O projeto conta com um makefile. Para rodar o projeto, o pacote [make](https://www.wikiwand.com/en/Make_(software)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/).
-### Rodando localmente
+### Rodando o jogo localmente
 #### 1) Caso seja a primeira vez que está rodando o projeto, vá para dentro da pasta _*backend*_. Caso contrário, pule para o 3° passo.
 ```sh
 cd backend
