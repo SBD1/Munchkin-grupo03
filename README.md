@@ -19,28 +19,27 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 ## 🧝 Como jogar?
 
 O projeto conta com um makefile. Para rodar o projeto, o pacote [make](https://www.wikiwand.com/en/Make_(software)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/).
-
-Vá para dentro da pasta _*backend*_
+### Rodando localmente
+#### 1) Caso seja a primeira vez que está rodando o projeto, vá para dentro da pasta _*backend*_. Caso contrário, pule para o 3° passo.
 ```sh
 cd backend
 ``` 
 
-Instale as dependências do backend
+#### 2) Instale as dependências do backend
 ```sh
 npm install
 ```
-
-Crie a rede interna do docker
+#### 3) Crie a rede interna do docker
 ```sh
 docker network create munchkin
 ```
 
-Rode o comando _*up*_ com o pacote make.
+#### 4) Rode o comando _*up*_ com o pacote make.
 ```sh
 make up
 ```
 
-Em outra janela de terminal, na pasta raiz do projeto, rode o comando _*migrate*_ com o pacote make.
+#### 5) Em outra janela de terminal, na pasta raiz do projeto, rode o comando _*migrate*_ com o pacote make.
 ```sh
 make migrate
 ```
