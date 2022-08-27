@@ -20,21 +20,31 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 
 O projeto conta com um makefile. Para rodar o projeto, o pacote [make](https://www.wikiwand.com/en/Make_(software)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/).
 
-Crie a rede interna do docker
+Vá para dentro da pasta _*backend*_
+```sh
+cd backend
+``` 
 
+Instale as dependências do backend
+```sh
+npm install
+```
+
+Crie a rede interna do docker
 ```sh
 docker network create munchkin
 ```
-Rode o comando _*up*_ com o pacote make.
 
+Rode o comando _*up*_ com o pacote make.
 ```sh
 make up
 ```
-Rode o comando _*migrate*_ com o pacote make.
 
+Em outra janela de terminal, na pasta raiz do projeto, rode o comando _*migrate*_ com o pacote make.
 ```sh
 make migrate
 ```
+
 Agora com o banco de dados inicializado, ...
 
 ## 🦹‍♀️ Tecnologias
