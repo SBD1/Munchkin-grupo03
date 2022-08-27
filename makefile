@@ -1,7 +1,6 @@
 dkc := "docker-compose.yml"
 
 up: 
-
 	docker-compose -f ${dkc} build
 	docker-compose -f ${dkc} up
 

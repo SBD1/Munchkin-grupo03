@@ -6,11 +6,10 @@
   "directories": {
     "doc": "docs"
   },
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
-    "migrate:create":  "ts-node-dev src/database/migrates/createTable.ts",
+    "migrate:create": "ts-node-dev src/database/migrates/createTable.ts",
     "build": "tsc",
     "createdb": "node src/database/migration/create-tables.js"
   },
@@ -26,7 +25,8 @@
   },
   "homepage": "https://github.com/SBD1/Munchkin#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
