@@ -1,3 +1,5 @@
+import { getAllJogadores } from "./services/jogador";
+
 //Função que recebe inputs
 
 import createUser from "./services/createUser";
@@ -39,7 +41,7 @@ while(game){
     
     let x = input();
     verify()
-    if(x == 'a'){
+    if (x == 'a') {
         game = false;
     }
 }

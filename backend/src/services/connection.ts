@@ -1,16 +1,11 @@
 import { Pool } from "pg";
 
-
-const pool = new Pool ({
+const connection = new Pool({
    user: "postgres",
    host: "localhost",
    database: "postgres",
    password: "postgres",
-   port: 5432   
+   port: 5432
 });
 
-
-export default pool
-
-
-
+export default connection

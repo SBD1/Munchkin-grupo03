@@ -1,5 +1,5 @@
 import userDto from "src/dto/userDto"
-import connect from "../database/connections"
+import connect from "../../src/services/connection"
 export default  class userRepository{
 
     public create(user: userDto){
