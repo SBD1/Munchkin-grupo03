@@ -1,6 +1,13 @@
 //Função que recebe inputs
+import verifyUser from "./verifyuser";
 const input = require('prompt-sync')({sigint: true});
 let game = true;
+
+function verify() {
+
+    verifyUser()
+   
+}
     //Checar se há jogadores na tabela personagem
     //Se tiver jogador, mostrar lista para selecionar personagem
     /*
@@ -24,6 +31,7 @@ let game = true;
 while(game){
     
     let x = input();
+    verify()
     if(x == 'a'){
         game = false;
     }
