@@ -11,7 +11,7 @@ CREATE TYPE tipo_equip AS ENUM (
 );
 
 CREATE TYPE tipo_pocao AS ENUM (
-    'Vida', 'Confusao', 'Forca'
+    'Confusao', 'Forca'
 );
 
 CREATE TYPE tipo_npc AS ENUM (
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS jogador (
     pes_id INTEGER DEFAULT NULL,
     missao_id INTEGER DEFAULT NULL,
     sala_id INTEGER DEFAULT NULL,
-    nivel_da_missao INTEGER NOT NULL DEFAULT 1,
+    missao_atual INTEGER NOT NULL DEFAULT 1,
 
    PRIMARY KEY (personagem_id),
    FOREIGN KEY(cabeca_id) REFERENCES equipamento(item_id),
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS inimigo (
     jogador_id INTEGER DEFAULT NULL,
 
     PRIMARY KEY (inimigo_id),
-    CONSTRAINT fk_jogador FOREIGN KEY (jogador_id) REFERENCES jogador(personagem_id)
+    FOREIGN KEY (jogador_id) REFERENCES jogador(personagem_id)
 
 );
 
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS mochila (
     jogador_id INTEGER NOT NULL,
     
     PRIMARY KEY (mochila_id),
-    CONSTRAINT fk_jogador FOREIGN KEY (jogador_id) REFERENCES jogador(personagem_id)
+    FOREIGN KEY (jogador_id) REFERENCES jogador(personagem_id)
 );
 
 -- Dialogo
@@ -137,5 +137,5 @@ CREATE TABLE IF NOT EXISTS dialogo (
     npc_id INTEGER,
     
     PRIMARY KEY (dialogo_id),
-    CONSTRAINT fk_personagem FOREIGN KEY (npc_id) REFERENCES npc(personagem_id)
+    FOREIGN KEY (npc_id) REFERENCES npc(personagem_id)
 );

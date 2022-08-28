@@ -18,7 +18,7 @@ VALUES
 (default, 'caça aos javalis', 'Javalis estão atacando os moradores da cidade de Munchiki City pela entra leste nas planícies, elimineos para obter a recompensa dessa missão!', 1);
 
 INSERT INTO jogador
-(personagem_id, nome, raca_personagem, classe_personagem, nivel, forca_combate, cabeca_id, arma_id, armadura_id, pes_id, missao_id, sala_id, nivel_da_missao)
+(personagem_id, nome, raca_personagem, classe_personagem, nivel, forca_combate, cabeca_id, arma_id, armadura_id, pes_id, missao_id, sala_id, missao_atual)
 VALUES(default, 'francisco', 'Humano', 'Mago', default, default, default, default, default, default, default, default, 1);
 
 INSERT INTO public.inimigo
@@ -28,7 +28,7 @@ VALUES(default, 'teste', 1, default);
 
 INSERT INTO public.mochila
 (mochila_id, capacidade, total_itens, jogador_id)
-VALUES(default, default, default, default);
+VALUES(default, default, default, 1);
 
 INSERT INTO public.equipamento
 (nome, valor, poder, classe_personagem, tipo)
