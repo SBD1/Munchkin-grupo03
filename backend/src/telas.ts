@@ -41,8 +41,6 @@ export function novoJogo() {
     console.log('');
     console.log('');
     escolha = input() - 1;
-    console.log(escolha);
-    console.log(nome[escolha]);
     novoUser.createNewUser(nome[escolha]);
 
     // Comportamento

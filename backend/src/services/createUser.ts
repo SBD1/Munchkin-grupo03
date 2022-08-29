@@ -8,14 +8,12 @@ export default class createUser {
     userCreate = new userRepository;
 
     public async createNewUser(nome: string): Promise<any> {
-      console.log('chegueii');
       return await this.userCreate.create(this.newUse(nome));
-      
     }
 
     private newUse(nome: string) {
         let newUser = new userDto;
-        newUser.name = nome;
+        newUser.nome = nome;
         newUser.classe_personagem = 0;
         newUser.raca_personagem = 1;
         return newUser;

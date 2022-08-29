@@ -20,7 +20,6 @@ while (game) {
 
     if (x == 1) {
         novoJogo();
-        let y = input();
     } else if (x == 2) {
         // Continuar com save game
         verify();
