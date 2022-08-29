@@ -6,6 +6,4 @@ COPY . .
 
 RUN npm install
 
-EXPOSE 3333
-
-CMD ["npm", "run", "dev"]
+CMD ["node", "src/server.ts"]    

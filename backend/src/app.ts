@@ -2,7 +2,6 @@ import { getAllJogadores } from "./services/jogador";
 
 //Função que recebe inputs
 
-import createUser from "./services/createUser";
 import verifyUser from "./services/verifyuser";
 const input = require('prompt-sync')({sigint: true});
 let game = true;
@@ -13,9 +12,6 @@ function verify() {
     
 }
 
-function createNewUser () {
-    return new createUser().createNewUser()
-}
 
     //Checar se há jogadores na tabela personagem
     //Se tiver jogador, mostrar lista para selecionar personagem
