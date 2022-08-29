@@ -6,7 +6,7 @@ import { menu, novoJogo } from "./telas";
 
 import verifyUser from "./services/verifyuser";
 const input = require('prompt-sync')({sigint: true});
-let game = true;
+let game: boolean = true;
 
 function verify() {
 
