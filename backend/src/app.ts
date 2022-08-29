@@ -14,35 +14,18 @@ function verify() {
     
 }
 
-
-    //Checar se há jogadores na tabela personagem
-    //Se tiver jogador, mostrar lista para selecionar personagem
-    /*
-    * Selecione o personagem que deseja utilizar, ou digite 0 para criar um personagem novo
-    *
-    * 1) Oswaldo
-    * 2) Adoniran
-    * 3) louco
-    * 
-    * 0
-    */
-
-    //Se não tiver jogador, mostrar tela para criação do personagem
-    /*
-    * Nome = Tritao
-    * lista das classes
-    * lista das racas
-    * 
-    */
-
 while (game) {
     menu();
     let x = input();
-    novoJogo();
-    let y = input();
 
-    verify();
-    if (x == 'a') {
+    if (x == 1) {
+        novoJogo();
+        verify();
+        let y = input();
+    } else if (x == 2) {
+        // Continuar
+    } else if (x == 0) {
         game = false;
+        break;
     }
 }
