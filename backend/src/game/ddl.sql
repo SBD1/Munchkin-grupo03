@@ -3,7 +3,7 @@ CREATE TYPE raca AS ENUM (
 );
 
 CREATE TYPE classe AS ENUM (
-    'Guerreiro', 'Mago', 'Ladrao', 'Clerigo'
+    'Guerreiro', 'Mago', 'Ladrao', 'Clerico'
 );
 
 CREATE TYPE tipo_equip AS ENUM (
@@ -22,7 +22,7 @@ CREATE TYPE tipo_npc AS ENUM (
 CREATE TABLE IF NOT EXISTS item (
 
     item_id SERIAL,
-    nome VARCHAR(20) NOT NULL, 
+    nome VARCHAR(50) NOT NULL, 
     valor INTEGER NOT NULL DEFAULT 0, 
     poder INTEGER NOT NULL DEFAULT 0,
 
@@ -33,8 +33,8 @@ CREATE TABLE IF NOT EXISTS item (
 
 CREATE TABLE IF NOT EXISTS equipamento (
 
-    classe_personagem classe NOT NULL,
-    tipo tipo_equip DEFAULT NULL,
+    classe_personagem classe DEFAULT NULL,
+    tipo tipo_equip NOT NULL,
 
     PRIMARY KEY (item_id)
 
@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS npc (
     nome VARCHAR(20) NOT NULL,
     raca_npc raca DEFAULT NULL,
     tipo tipo_npc DEFAULT 'Passivo',
+    sala_id INTEGER NOT NULL,
 
     PRIMARY KEY(personagem_id)
 );
@@ -67,6 +68,9 @@ CREATE TABLE IF NOT EXISTS sala (
     sala_id SERIAL,
     descricao VARCHAR(300),
     nome VARCHAR(20),
+    inimigo_id INTEGER DEFAULT NULL,
+    objeto_id INTEGER DEFAULT NULL,
+    item_id INTEGER DEFAULT NULL,
 
     PRIMARY KEY (sala_id)
 );
@@ -112,6 +116,7 @@ CREATE TABLE IF NOT EXISTS inimigo (
     nome VARCHAR(20) NOT NULL,
     poder INTEGER NOT NULL DEFAULT 1,
     jogador_id INTEGER DEFAULT NULL,
+    recompensa_id INTEGER DEFAULT NULL,
 
     PRIMARY KEY (inimigo_id),
     FOREIGN KEY (jogador_id) REFERENCES jogador(personagem_id)
@@ -138,4 +143,22 @@ CREATE TABLE IF NOT EXISTS dialogo (
     
     PRIMARY KEY (dialogo_id),
     FOREIGN KEY (npc_id) REFERENCES npc(personagem_id)
+);
+
+-- Salas conectadas
+CREATE TABLE IF NOT EXISTS salas_conectadas (
+    id_da_sala_atual INTEGER,
+    id_da_sala_conectada INTEGER
+);
+
+-- Items da Mochila
+CREATE TABLE If NOT EXISTS item_guardados (
+    mochila_id INTEGER,
+    item_id INTEGER
+);
+
+-- Relação de monstros mortos
+CREATE TABLE IF NOT EXISTS enfrentou (
+    personagem_id INTEGER,
+    inimigo_id INTEGER
 );
