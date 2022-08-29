@@ -1,6 +1,6 @@
 export default class User {
 
-    public name: string
+    public nome: string
     public raca_personagem: number
     public classe_personagem: number
     public nivel: number
