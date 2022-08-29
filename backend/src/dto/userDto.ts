@@ -4,7 +4,7 @@ export default class User {
     public raca_personagem: number
     public classe_personagem: number
     public nivel: number
-    public  forca_combate: number
+    public forca_combate: number
     public cabeca_id: number
     public arma_id: number 
     public armadura_id: number

@@ -20,10 +20,10 @@ while (game) {
 
     if (x == 1) {
         novoJogo();
-        verify();
         let y = input();
     } else if (x == 2) {
-        // Continuar
+        // Continuar com save game
+        verify();
     } else if (x == 0) {
         game = false;
         break;

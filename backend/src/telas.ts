@@ -1,3 +1,7 @@
+import createUser from "./services/createUser";
+
+const input = require('prompt-sync')({sigint: true});
+const novoUser = new createUser;
 
 export function menu() {
     console.clear();
@@ -22,19 +26,24 @@ export function menu() {
 }
 
 export function novoJogo() {
+    let nome: string[] = ['Druida louco', 'Mago maluco', 'Guerreiro bêbado'];
+    let escolha: number;
     console.clear();
     console.log('');
     console.log('');
-    console.log('Selecione o personagem que deseja utilizar, ou digite 0 para criar um personagem novo:');
+    console.log('escolha o personagem:');
     console.log('');
-    console.log('[1] Oswaldo');
-    console.log('[2] Adoniran');
-    console.log('[3] Louco');
+    console.log('[1] Druida louco');
+    console.log('[2] Mago maluco');
+    console.log('[3] Guerreiro Bêbado');
     console.log('');
-    console.log('[4] Novo personagem');
     console.log('[0] Voltar');
     console.log('');
     console.log('');
+    escolha = input() - 1;
+    console.log(escolha);
+    console.log(nome[escolha]);
+    novoUser.createNewUser(nome[escolha]);
 
     // Comportamento
 }

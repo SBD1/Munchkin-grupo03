@@ -1,25 +1,23 @@
-import userDto from "src/dto/userDto";
-import userRepository from "src/repository/userRepository";
+import userDto from "../dto/userDto";
+import userRepository from "../repository/userRepository";
 
 const input = require('prompt-sync')({sigint: true});
 
 export default class createUser {
 
-    userCreate = new userRepository
+    userCreate = new userRepository;
 
-    public async createNewUser(): Promise<any> {
-        
-      return await this.userCreate.create(this.newUse())
+    public async createNewUser(nome: string): Promise<any> {
+      console.log('chegueii');
+      return await this.userCreate.create(this.newUse(nome));
       
     }
 
-    private newUse() {
-        let newUser = new userDto
-        newUser.name = input()
-        return newUser
-        
+    private newUse(nome: string) {
+        let newUser = new userDto;
+        newUser.name = nome;
+        newUser.classe_personagem = 0;
+        newUser.raca_personagem = 1;
+        return newUser;
     }
-
-
-    
 }
