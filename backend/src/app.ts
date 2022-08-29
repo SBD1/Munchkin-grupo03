@@ -1,5 +1,7 @@
 import { getAllJogadores } from "./services/jogador";
 
+import { menu, novoJogo } from "./telas";
+
 //Função que recebe inputs
 
 import verifyUser from "./services/verifyuser";
@@ -33,10 +35,13 @@ function verify() {
     * 
     */
 
-while(game){
-    
+while (game) {
+    menu();
     let x = input();
-    verify()
+    novoJogo();
+    let y = input();
+
+    verify();
     if (x == 'a') {
         game = false;
     }
