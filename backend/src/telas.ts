@@ -1,7 +1,12 @@
 import createUser from "./services/createUser";
+import userDto from "./dto/userDto";
+import Sala from "./services/sala"
+import playGame from "./services/playGame";
 
 const input = require('prompt-sync')({sigint: true});
 const novoUser = new createUser;
+const sala_atual = new Sala;
+const play_Game = new playGame;
 
 export function menu() {
     console.clear();
@@ -42,6 +47,33 @@ export function novoJogo() {
     console.log('');
     escolha = input() - 1;
     novoUser.createNewUser(nome[escolha]);
+}
 
-    // Comportamento
+export async function playState() {
+    
+    console.clear();
+    const player: any = await novoUser.getPlayer(6);
+    console.log(player[0].nome);
+    sala(player[0].sala_id);
+    input();
+    // let comando: string = input();
+    // play_Game.playGame();
+}
+
+async function sala(sala_id: number) {
+
+    const salinha: any = await sala_atual.getRoom(sala_id);
+    console.log(salinha[0].nome);
+
+    console.log('************************************************');
+    console.log('*                                              *');
+    console.log(`*  Bem vindo à ${salinha[0].nome}  *`);
+    console.log('*                                              *');
+    console.log('************************************************');
+
+    //lista de itens na sala
+
+    //lista de monstros
+
+    //lista de npcs
 }

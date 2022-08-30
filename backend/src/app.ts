@@ -1,6 +1,6 @@
 import { getAllJogadores } from "./services/jogador";
 
-import { menu, novoJogo } from "./telas";
+import { menu, novoJogo, playState } from "./telas";
 
 //Função que recebe inputs
 
@@ -19,10 +19,12 @@ while (game) {
     let x = input();
 
     if (x == 1) {
-        novoJogo();
+        // novoJogo();
+        playState();
     } else if (x == 2) {
         // Continuar com save game
         verify();
+        input();
     } else if (x == 0) {
         game = false;
         break;
