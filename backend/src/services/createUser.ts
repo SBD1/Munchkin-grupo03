@@ -1,8 +1,6 @@
 import userDto from "../dto/userDto";
 import userRepository from "../repository/userRepository";
 
-const input = require('prompt-sync')({sigint: true});
-
 export default class createUser {
 
     private userCreate = new userRepository;

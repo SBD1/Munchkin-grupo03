@@ -22,13 +22,8 @@ export default  class userRepository{
     }
 
     public async getUser(player_id: number) {
-        console.log('user');
-        const test = (res) => {
-            console.log(res);
-            return res.rows;
-        }
-        const x = await connect.query(`SELECT * FROM jogador WHERE personagem_id = ${player_id}`);
-        return x;
+        const user = await connect.query(`SELECT * FROM jogador WHERE personagem_id = ${player_id}`);
+        return user.rows;
     }
     
 }
