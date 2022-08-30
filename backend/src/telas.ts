@@ -1,7 +1,10 @@
 import createUser from "./services/createUser";
+import userDto from "./dto/userDto";
+import playGame from "./services/playGame";
 
 const input = require('prompt-sync')({sigint: true});
 const novoUser = new createUser;
+const play_Game = new playGame;
 
 export function menu() {
     console.clear();
@@ -42,6 +45,23 @@ export function novoJogo() {
     console.log('');
     escolha = input() - 1;
     novoUser.createNewUser(nome[escolha]);
+}
 
-    // Comportamento
+export async function playState() {
+    
+    console.clear();
+    await novoUser.getPlayer(1).then((x) => {return console.log('alo: ', x)});
+    input();
+    // sala();
+    // let comando: string = input();
+    // play_Game.playGame();
+}
+
+function sala() {
+
+    console.log('************************************************');
+    console.log('*                                              *');
+    console.log('*  Bem vindo à Floresta do Manticornitorrinco  *');
+    console.log('*                                              *');
+    console.log('************************************************');
 }

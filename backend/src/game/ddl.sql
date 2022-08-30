@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS jogador (
     armadura_id INTEGER DEFAULT NULL,
     pes_id INTEGER DEFAULT NULL,
     missao_id INTEGER DEFAULT NULL,
-    sala_id INTEGER DEFAULT NULL,
+    sala_id INTEGER DEFAULT 1,
     missao_atual INTEGER NOT NULL DEFAULT 1,
 
    PRIMARY KEY (personagem_id),
