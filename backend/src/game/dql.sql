@@ -19,7 +19,7 @@ select * from dialogo where npc_id = 1
 -- missao
 select * from missao where nivel_da_missao = 1
 
--- inimigos mortos
+-- verifica se inimigo esta morto
 SELECT CASE WHEN EXISTS (
     SELECT *
     FROM enfrentou
