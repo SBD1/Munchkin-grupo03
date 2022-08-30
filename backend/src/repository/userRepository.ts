@@ -21,10 +21,14 @@ export default  class userRepository{
         });
     }
 
-    public getUser = (player_id: number) =>  connect.query(`SELECT * FROM jogador WHERE personagem_id = ${player_id}`, (err:any, res:any) => {
+    public async getUser(player_id: number) {
+        console.log('user');
+        const test = (res) => {
             console.log(res);
-            connect.end();
             return res.rows;
-        });
+        }
+        const x = await connect.query(`SELECT * FROM jogador WHERE personagem_id = ${player_id}`);
+        return x;
+    }
     
 }
