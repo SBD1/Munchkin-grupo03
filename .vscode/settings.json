@@ -1,3 +1,5 @@
 {
-    "makefile.extensionOutputFolder": "./.vscode"
+    "makefile.extensionOutputFolder": "./.vscode",
+    "deno.enable": true,
+    "deno.unstable": true
 }
