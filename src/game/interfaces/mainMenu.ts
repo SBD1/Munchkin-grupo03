@@ -9,5 +9,5 @@ export default async function printMenu(){
     console.log('\n');
     console.log('\t1) Carregar jogo salvo');
     console.log('\t2) Começar novo jogo');
-    console.log('\t0) Carregar jogo salvo');
+    console.log('\t0) Sair');
 }

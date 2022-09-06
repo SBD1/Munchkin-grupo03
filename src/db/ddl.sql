@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS item (
 --Equipamentos
 CREATE TABLE IF NOT EXISTS equipamento (
 
-    classe_personagem classe NOT NULL,
+    classe_personagem classe DEFAULT NULL,
     tipo tipo_equip DEFAULT NULL,
 
     PRIMARY KEY (item_id)
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS inimigo (
 
     inimigo_id SERIAL,
     nome VARCHAR(20) NOT NULL,
-    poder INTEGER NOT NULL DEFAULT 1,
+    poder INTEGER NOT NULL,
     jogador_id INTEGER DEFAULT NULL,
 
     PRIMARY KEY (inimigo_id),
