@@ -247,3 +247,8 @@
 
         INSERT INTO item (nome, valor, poder, tipo)
         VALUES ('Água Mineral de Marca', 100, 2, 'Pocao');
+
+----------------------Salas-----------------------------
+
+    INSERT INTO sala (descricao, nome)
+    VALUES ('algo', 'algo');
