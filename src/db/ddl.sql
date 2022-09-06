@@ -8,6 +8,10 @@ CREATE TYPE classe AS ENUM (
     'Guerreiro', 'Mago', 'Ladrao', 'Clerigo'
 );
 
+CREATE TYPE tipo_item AS ENUM (
+    'Equipamento', 'Pocao'
+);
+
 CREATE TYPE tipo_equip AS ENUM (
     'Cabeca', 'Arma', 'Armadura', 'Pes'
 );
@@ -29,6 +33,7 @@ CREATE TABLE IF NOT EXISTS item (
     nome VARCHAR(20) NOT NULL, 
     valor INTEGER NOT NULL DEFAULT 0, 
     poder INTEGER NOT NULL DEFAULT 0,
+    tipo tipo_item DEFAULT NULL,
 
     PRIMARY KEY (item_id)
 );
@@ -40,7 +45,6 @@ CREATE TABLE IF NOT EXISTS equipamento (
     tipo tipo_equip DEFAULT NULL,
 
     PRIMARY KEY (item_id)
-
 ) INHERITS (item);
 
 
@@ -55,6 +59,7 @@ CREATE TABLE IF NOT EXISTS pocao (
 
 --Salas
 CREATE TABLE IF NOT EXISTS sala (
+
     sala_id SERIAL,
     descricao VARCHAR(300),
     nome VARCHAR(20),
@@ -74,6 +79,7 @@ CREATE TABLE IF NOT EXISTS objeto(
 
 --Personagem
 CREATE TABLE IF NOT EXISTS personagem(
+
     personagem_id SERIAL,
     nome VARCHAR(20) NOT NULL,
     raca_personagem raca DEFAULT 'Humano',
@@ -91,6 +97,7 @@ CREATE TABLE IF NOT EXISTS npc (
 
 -- Dialogo
 CREATE TABLE IF NOT EXISTS dialogo (
+
     dialogo_id SERIAL,
     texto VARCHAR(500) NOT NULL,
     nivel_da_missao INTEGER NOT NULL DEFAULT 1,
@@ -112,6 +119,7 @@ CREATE TABLE IF NOT EXISTS jogador (
     equip_pes_id INTEGER DEFAULT NULL,
     sala_atual_id INTEGER DEFAULT NULL,
     missao_atual_id INTEGER NOT NULL DEFAULT 1,
+    qtd_gold INTEGER NOT NULL DEFAULT 0,
 
    PRIMARY KEY (personagem_id),
    FOREIGN KEY(equip_cabeca_id) REFERENCES equipamento(item_id),
@@ -124,6 +132,7 @@ CREATE TABLE IF NOT EXISTS jogador (
 
 -- Mochilas
 CREATE TABLE IF NOT EXISTS mochila (
+
     jogador_id INTEGER NOT NULL,
     capacidade INTEGER NOT NULL DEFAULT 10,
     total_itens INTEGER NOT NULL DEFAULT 0,
@@ -141,7 +150,6 @@ CREATE TABLE IF NOT EXISTS inimigo (
 
     PRIMARY KEY (inimigo_id),
     FOREIGN KEY (jogador_id) REFERENCES jogador(personagem_id)
-
 );
 
 --Missoes
@@ -159,6 +167,7 @@ CREATE TABLE IF NOT EXISTS missao (
 
 --Possui
 CREATE TABLE IF NOT EXISTS npc_possui_dialogo(
+
     npc_id SERIAL,
     dialogo_id SERIAL,
 
@@ -168,6 +177,7 @@ CREATE TABLE IF NOT EXISTS npc_possui_dialogo(
 
 --Libera
 CREATE TABLE IF NOT EXISTS missao_libera_dialogo(
+
     missao_id SERIAL,
     dialogo_id SERIAL,
 
@@ -177,6 +187,7 @@ CREATE TABLE IF NOT EXISTS missao_libera_dialogo(
 
 --Recompensa
 CREATE TABLE IF NOT EXISTS missao_recompensa_item(
+
     missao_id SERIAL,
     item_id SERIAL,
 
@@ -186,6 +197,7 @@ CREATE TABLE IF NOT EXISTS missao_recompensa_item(
 
 --Desbloqueia
 CREATE TABLE IF NOT EXISTS missao_desbloqueia_missao(
+
     missao_base_id SERIAL,
     missao_alvo_id SERIAL,
 
@@ -195,6 +207,7 @@ CREATE TABLE IF NOT EXISTS missao_desbloqueia_missao(
 
 --Guarda
 CREATE TABLE IF NOT EXISTS mochila_guarda_item(
+
     personagem_id SERIAL,
     item_id SERIAL,
 
@@ -204,6 +217,7 @@ CREATE TABLE IF NOT EXISTS mochila_guarda_item(
 
 --Conecta
 CREATE TABLE IF NOT EXISTS sala_conecta_sala(
+
     sala_base_id SERIAL,
     sala_alvo_id SERIAL,
 
@@ -213,6 +227,7 @@ CREATE TABLE IF NOT EXISTS sala_conecta_sala(
 
 --Contem
 CREATE TABLE IF NOT EXISTS sala_contem_item(
+
     sala_id SERIAL,
     item_id SERIAL,
 
@@ -222,6 +237,7 @@ CREATE TABLE IF NOT EXISTS sala_contem_item(
 
 --Dispoe
 CREATE TABLE IF NOT EXISTS sala_dispoe_objeto(
+
     sala_id SERIAL,
     objeto_id SERIAL,
 
@@ -231,6 +247,7 @@ CREATE TABLE IF NOT EXISTS sala_dispoe_objeto(
 
 --Possui
 CREATE TABLE IF NOT EXISTS sala_possui_jogador(
+
     sala_id SERIAL,
     jogador_id SERIAL,
 
@@ -240,6 +257,7 @@ CREATE TABLE IF NOT EXISTS sala_possui_jogador(
 
 --Acomoda
 CREATE TABLE IF NOT EXISTS sala_acomoda_npc(
+
     sala_id SERIAL,
     npc_id SERIAL,
 
@@ -249,6 +267,7 @@ CREATE TABLE IF NOT EXISTS sala_acomoda_npc(
 
 --Tem
 CREATE TABLE IF NOT EXISTS sala_tem_inimigo(
+
     sala_id SERIAL,
     inimigo_id SERIAL,
 
@@ -258,6 +277,7 @@ CREATE TABLE IF NOT EXISTS sala_tem_inimigo(
 
 --Reserva
 CREATE TABLE IF NOT EXISTS objeto_reserva_item(
+
     objeto_id SERIAL,
     item_id SERIAL,
 
@@ -267,6 +287,7 @@ CREATE TABLE IF NOT EXISTS objeto_reserva_item(
 
 --Dropa
 CREATE TABLE IF NOT EXISTS inimigo_dropa_item(
+
     inimigo_id SERIAL,
     item_id SERIAL,
 
@@ -276,6 +297,7 @@ CREATE TABLE IF NOT EXISTS inimigo_dropa_item(
 
 --Enfrenta
 CREATE TABLE IF NOT EXISTS jogador_enfrenta_inimigo(
+
     jogador_id SERIAL,
     inimigo_id SERIAL,
     resolvido BOOLEAN,
