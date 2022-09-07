@@ -7,7 +7,7 @@ type equipamentos = {
 }
 
 //Classe personagem básica
-export default class Character{
+export default class Personagem{
     id: number;
     nome: string;
     raca: string;
