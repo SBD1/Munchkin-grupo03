@@ -24,6 +24,10 @@ CREATE TYPE tipo_npc AS ENUM (
     'Vendedor', 'Passivo'
 );
 
+CREATE TYPE tipo_personagem AS ENUM (
+    'Npc', 'Jogador'
+);
+
 ------------------------Entidades--------------------------
 
 --Itens
@@ -82,7 +86,8 @@ CREATE TABLE IF NOT EXISTS personagem(
 
     personagem_id SERIAL,
     nome VARCHAR(20) NOT NULL,
-    raca_personagem raca DEFAULT 'Humano',
+    raca_personagem raca NOT NULL DEFAULT 'Humano',
+    tipo tipo_personagem  NOT NULL,
 
     PRIMARY KEY (personagem_id)
 );
@@ -90,7 +95,7 @@ CREATE TABLE IF NOT EXISTS personagem(
 --NPCs
 CREATE TABLE IF NOT EXISTS npc (
 
-    tipo tipo_npc DEFAULT 'Passivo',
+    tipo tipo_npc NOT NULL DEFAULT 'Passivo',
 
     PRIMARY KEY (personagem_id)
 ) INHERITS (personagem);
@@ -145,11 +150,9 @@ CREATE TABLE IF NOT EXISTS inimigo (
 
     inimigo_id SERIAL,
     nome VARCHAR(20) NOT NULL,
-    poder INTEGER NOT NULL,
-    jogador_id INTEGER DEFAULT NULL,
+    poder INTEGER NOT NULL DEFAULT 1,
 
     PRIMARY KEY (inimigo_id),
-    FOREIGN KEY (jogador_id) REFERENCES jogador(personagem_id)
 );
 
 --Missoes
