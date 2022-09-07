@@ -14,7 +14,7 @@ export default class Personagem{
     classe: string;
     nivel: number;
     forcaDeCombate: number;
-    equipamento:equipamentos; //Como inicializar um objeto dentro de uma classe ?
+    equipamento:equipamentos;
     missaoAtual: number;
     salaAtual: number;
     gold: number;
