@@ -251,4 +251,28 @@
 ----------------------Salas-----------------------------
 
     INSERT INTO sala (descricao, nome)
-    VALUES ('algo', 'algo');
+    VALUES ('Uma taverna acolhedora com musica ao vivo, bebidas e aventuras!', 'Taverna do Sir Deno');
+
+    INSERT INTO sala (descricao, nome)
+    VALUES ('A praca central da vila Munchkin', 'Praça central');
+
+    INSERT INTO sala (descricao, nome)
+    VALUES ('Uma loja de itens variados, com varios itens em exibicao', 'Loja do Anão Barbudo');
+
+    INSERT INTO sala (descricao, nome)
+    VALUES ('A casa de um senhor de idade que so quer conversar', 'Casa Vermelha');
+
+    INSERT INTO sala (descricao, nome)
+    VALUES ('A casa de um guerreiro criador de pitbulls', 'Casa Azul');
+
+    INSERT INTO sala (descricao, nome)
+    VALUES ('A Floresta Kovalic e uma floresta cheia de vida', 'Floresta Kovalic');
+
+    INSERT INTO sala (descricao, nome)
+    VALUES ('Uma praia com ondas fortes e uma sensacao de magia no ar', 'Praia de Jackson');
+
+    INSERT INTO sala (descricao, nome)
+    VALUES ('Uma casa mal assombrada, com as paredes caindo aos pedacos e cheiro putrido', 'Casa Mal-assombrada');
+
+    INSERT INTO sala (descricao, nome)
+    VALUES ('O antigo castelo do Rei, que hoje e a casa do terrivel dragao de plutonio!', 'Castelo destruido');

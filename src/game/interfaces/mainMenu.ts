@@ -1,5 +1,5 @@
 //Módulo para gerar o tíulo do jogo
-import figlet from 'https://x.nest.land/deno-figlet@0.0.5/mod.js';
+import figlet from 'https://x.nest.land/deno-figlet@0.0.5/mod.js'
 
 //Mostrar o título do jogo com um menu de opções
 export default async function printMenu(){
