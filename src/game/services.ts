@@ -6,4 +6,4 @@ serve((_req) => {
   });
     
 });
-console.log("Abra outro terminal e execulte o comando make up, para começar a game play!")
+console.log("Abra outro terminal e execulte o comando make start, para começar a game play!")
