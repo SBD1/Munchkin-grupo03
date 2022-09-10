@@ -3,9 +3,9 @@ version: '3'
 services:
     app:
         container_name: app
-        build: ./backend
+        build: .
         volumes:
-            - ./backend:/app
+            - .:/app
     db:
         container_name: db
         image: postgres

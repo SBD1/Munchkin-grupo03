@@ -1,11 +1,13 @@
 dkc := "docker-compose.yml"
 
 up: 
-	docker run --name db -e POSTGRES_PASSWORD=postgres postgres
+	docker-compose -f ${dkc} build
+	docker-compose -f ${dkc} up
 
 build:
 	docker network create munchkin
 	docker-compose -f ${dkc} build
+
 
 clean:
 	docker-compose -f ${dkc} kill
@@ -21,5 +23,5 @@ migrate:
 	docker exec db  psql -U postgres postgres -f dml.sql -o n.out -q teste
 
 start:
-	docker run -it --name munchkin -v $PWD:/app denoland/deno:1.25.2 run --allow-net /app/src/game/main.ts
+	docker exec -it app deno run --allow-net src/game/main.ts
 
