@@ -283,21 +283,21 @@
     VALUES ('Sir Deno', DEFAULT, 'Npc');
 
     INSERT INTO personagem (nome, raca_personagem, tipo)
-    VALUES ('Bombur', 'Anao', 'Npc');w
+    VALUES ('Bombur', 'Anao', 'Npc');
 
     INSERT INTO personagem (nome, raca_personagem, tipo)
     VALUES ('Senhor Cogu', DEFAULT, 'Npc');
 
 ----------------------Dialogos-----------------------------
-    INSERT INTO dialogo (texto, nivel_da_missao, npc_id)
+    INSERT INTO dialogo (texto, nivel_da_missao)
     VALUES ('algo...', 1);
 
-    INSERT INTO dialogo (texto, nivel_da_missao, npc_id)
+    INSERT INTO dialogo (texto, nivel_da_missao)
     VALUES ('algo...', 1);
 
-    INSERT INTO dialogo (texto, nivel_da_missao, npc_id)
+    INSERT INTO dialogo (texto, nivel_da_missao)
     VALUES ('algo...', 1);
 ----------------------Missoes-----------------------------
 
-    INSERT INTO missao (nome, descricao, nivel)
+    INSERT INTO missao (nome, descricao, nivel_da_missao)
     VALUES ('Boas vindas a Munchkin', 'Nesta missao voce ira aprender os comandos basicos do jogo', 1);

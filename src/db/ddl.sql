@@ -34,7 +34,7 @@ CREATE TYPE tipo_personagem AS ENUM (
 CREATE TABLE IF NOT EXISTS missao (
 
     missao_id SERIAL,
-    nome VARCHAR(20),
+    nome VARCHAR(50),
     descricao VARCHAR(300),
     nivel_da_missao INTEGER NOT NULL DEFAULT 1,
 

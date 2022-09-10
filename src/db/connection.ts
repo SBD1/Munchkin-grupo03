@@ -1,13 +1,18 @@
-import { Pool } from "https://deno.land/x/pg@v0.6.1/mod.ts";
+// deno run --allow-net --allow-read mod.ts
+import { Client } from "https://deno.land/x/postgres@v0.16.1/mod.ts";
 
-const pool = new Pool({
-    user: 'postgres',
-    hostname: 'db',
-    database: 'postgres',
-    password: 'postgres',
-    port: 5432
+const client = new Client({
+  user: "postgres",
+  database: "postgres",
+  hostname: "localhost",
+  password: "postgres",
+  port: 5432,
 });
+await client.connect();
 
-// const database = await pool.connect();
+{
+  const result = await client.queryArray("SELECT * FROM sala");
+  console.log(result.rows); // [[1, 'Carlos'], [2, 'John'], ...]
+}
 
-export default pool;
+await client.end();
