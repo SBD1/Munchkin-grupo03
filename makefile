@@ -1,13 +1,11 @@
 dkc := "docker-compose.yml"
 
 up: 
-	docker-compose -f ${dkc} build
-	docker-compose -f ${dkc} up
+	docker run --name db -e POSTGRES_PASSWORD=postgres postgres
 
 build:
 	docker network create munchkin
 	docker-compose -f ${dkc} build
-
 
 clean:
 	docker-compose -f ${dkc} kill
@@ -17,11 +15,11 @@ clean:
 	@echo "Containers Docker foram parados e deletados."
 
 migrate:
-	docker cp backend/src/game/ddl.sql db:/
-	docker cp backend/src/game/dml.sql db:/
+	docker cp ./src/db/ddl.sql db:/
+	docker cp ./src/db/dml.sql db:/
 	docker exec db  psql -U postgres postgres -f ddl.sql -o n.out -q teste
 	docker exec db  psql -U postgres postgres -f dml.sql -o n.out -q teste
 
 start:
-	docker exec -it app bash
+	docker run -it --name munchkin -v $PWD:/app denoland/deno:1.25.2 run --allow-net /app/src/game/main.ts
 
