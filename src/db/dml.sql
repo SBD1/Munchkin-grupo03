@@ -276,3 +276,28 @@
 
     INSERT INTO sala (descricao, nome)
     VALUES ('O antigo castelo do Rei, que hoje e a casa do terrivel dragao de plutonio!', 'Castelo destruido');
+
+----------------------NPCs-----------------------------
+
+    INSERT INTO personagem (nome, raca_personagem, tipo)
+    VALUES ('Sir Deno', DEFAULT, 'Npc');
+
+    INSERT INTO personagem (nome, raca_personagem, tipo)
+    VALUES ('Bombur', 'Anao', 'Npc');w
+
+    INSERT INTO personagem (nome, raca_personagem, tipo)
+    VALUES ('Senhor Cogu', DEFAULT, 'Npc');
+
+----------------------Dialogos-----------------------------
+    INSERT INTO dialogo (texto, nivel_da_missao, npc_id)
+    VALUES ('algo...', 1);
+
+    INSERT INTO dialogo (texto, nivel_da_missao, npc_id)
+    VALUES ('algo...', 1);
+
+    INSERT INTO dialogo (texto, nivel_da_missao, npc_id)
+    VALUES ('algo...', 1);
+----------------------Missoes-----------------------------
+
+    INSERT INTO missao (nome, descricao, nivel)
+    VALUES ('Boas vindas a Munchkin', 'Nesta missao voce ira aprender os comandos basicos do jogo', 1);

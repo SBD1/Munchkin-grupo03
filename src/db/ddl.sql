@@ -117,10 +117,8 @@ CREATE TABLE IF NOT EXISTS dialogo (
     dialogo_id SERIAL,
     texto VARCHAR(500) NOT NULL,
     nivel_da_missao INTEGER NOT NULL DEFAULT 1,
-    npc_id INTEGER,
     
-    PRIMARY KEY (dialogo_id),
-    FOREIGN KEY (npc_id) REFERENCES npc(personagem_id)
+    PRIMARY KEY (dialogo_id)
 );
 
 --Jogador

@@ -10,11 +10,11 @@ console.log(`%copção selecionada: ${opcao}`, 'color: blue; font-weight: bold')
 
 //Fluxo de opções do menu
 switch(opcao){
-    //Carregar jogo salvo
     case 1:
+        //Carregar jogo salvo
         break;
-    //Começar novo jogo
     case 2:
+        //Começar novo jogo
         break;
     //Sair do jogo
     case 0:
