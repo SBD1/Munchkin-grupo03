@@ -24,7 +24,7 @@ export default class userRepository {
         await client.connect();
         const res = await client.queryArray({
             args: {nome: player.nome, raca: player.raca, classe: player.classe},
-            text: 'INSERT INTO jogador (nome, raca_personagem, classe_personagem) VALUES ($nome, $raca, $classe) RETURNING personagem_id',
+            text: 'INSERT INTO jogador (nome, raca, classe) VALUES ($nome, $raca, $classe) RETURNING personagem_id',
         });
         console.log(res.rows[0]);
         await client.end();

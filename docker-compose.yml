@@ -1,11 +1,6 @@
 version: '3'
 
 services:
-    app:
-        container_name: app
-        build: .
-        volumes:
-            - .:/app
     db:
         container_name: db
         image: postgres
@@ -18,6 +13,13 @@ services:
             - POSTGRES_HOST=db
         volumes:
             - db:/var/lib/postgresql/data
+    app:
+        container_name: app
+        build: .
+        volumes:
+            - .:/app
+        depends_on:
+            - db
 
 volumes:
     db:

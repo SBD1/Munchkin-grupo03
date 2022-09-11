@@ -114,139 +114,139 @@
 ----------------------Itens-----------------------------
 
     -------------------Equipamentos--------------------
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Espada Bastarda Traiçoeira', 400, 2, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Espada Bastarda Traiçoeira', 400, 2, 'Equipamento', DEFAULT, 'Arma');
         
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Arco com Fitinhas', 800, 4, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Arco com Fitinhas', 800, 4, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Serra Elétrica de Multilação Sangrenta', 600, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Serra Elétrica de Multilação Sangrenta', 600, 3, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Broquel da Bravata', 400, 2, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Broquel da Bravata', 400, 2, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Bandana de machão', 400, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Bandana de machão', 400, 3, 'Equipamento', DEFAULT, 'Cabeca');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Cajado de Napalm', 800, 5, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Cajado de Napalm', 800, 5, 'Equipamento', 'Mago', 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Elmo da Coragem', 200, 1, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Elmo da Coragem', 200, 1, 'Equipamento', DEFAULT, 'Cabeca');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Elmo Chifrudo', 600, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Elmo Chifrudo', 600, 3, 'Equipamento', DEFAULT, 'Cabeca');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Chapéu de Bruxo do Poder', 400, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Chapéu de Bruxo do Poder', 400, 3, 'Equipamento', 'Mago', 'Cabeca');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Adaga da Traição', 400, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Adaga da Traição', 400, 3, 'Equipamento', 'Ladrao', 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Botas Para Correr Muito Rápido', 400, 0, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Botas Para Correr Muito Rápido', 400, 0, 'Equipamento', DEFAULT, 'Pes');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Armadura de Mithril', 600, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Armadura de Mithril', 600, 3, 'Equipamento', DEFAULT, 'Armadura');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Tuba Encantada', 300, 0, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Tuba Encantada', 300, 0, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Maça Afiada', 600, 4, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Maça Afiada', 600, 4, 'Equipamento', 'Clerigo', 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Espetinho de Rato', 0, 1, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Espetinho de Rato', 0, 1, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Meia Calça da Força do Gigante', 600, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Meia Calça da Força do Gigante', 600, 3, 'Equipamento', DEFAULT, 'Armadura');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Escudo Onipresente', 600, 4, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Escudo Onipresente', 600, 4, 'Equipamento', 'Guerreiro', 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Armadura de Couro', 200, 1, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Armadura de Couro', 200, 1, 'Equipamento', DEFAULT, 'Armadura');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Armadura Flamejante', 400, 2, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Armadura Flamejante', 400, 2, 'Equipamento', DEFAULT, 'Armadura');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Cacete do Complexo de Inferioridade', 400, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Cacete do Complexo de Inferioridade', 400, 3, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Alabarda Suíça', 600, 4, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Alabarda Suíça', 600, 4, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Armadura Pegajosa', 200, 1, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Armadura Pegajosa', 200, 1, 'Equipamento', DEFAULT, 'Armadura');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Sandálias da Proteção', 700, 0, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Sandálias da Proteção', 700, 0, 'Equipamento', DEFAULT, 'Pes');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Ralador de Queijo da Paz', 400, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Ralador de Queijo da Paz', 400, 3, 'Equipamento', 'Clerigo', 'Arma');
         
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Armadura Rechonchuda', 400, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Armadura Rechonchuda', 400, 3, 'Equipamento', DEFAULT, 'Armadura');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Pedra Gigante', 0, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Pedra Gigante', 0, 3, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Botas de Chutar a Bunda', 400, 2, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Botas de Chutar a Bunda', 400, 2, 'Equipamento', DEFAULT, 'Pes');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Manto das Sombras', 600, 4, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Manto das Sombras', 600, 4, 'Equipamento', 'Ladrao', 'Armadura');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Espa-Dona', 400, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Lança Muito Grande', 200, 1, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Florete da Injustiça', 600, 3, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Espa-Dona', 400, 3, 'Equipamento', DEFAULT, 'Arma');
 
-        INSERT INTO equipamento (nome, valor, poder, tipo)
-        VALUES ('Martelo Detona Joelho', 600, 4, 'Equipamento');
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Florete da Injustiça', 600, 3, 'Equipamento', DEFAULT, 'Arma');
+
+        INSERT INTO equipamento (nome, valor, poder, tipo, classe, local_equip)
+        VALUES ('Martelo Detona Joelho', 600, 4, 'Equipamento', DEFAULT, 'Arma');
 
     -------------------Poções--------------------
     
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Água Mineral de Marca', 100, 2, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Água Mineral de Marca', 100, 2, 'Pocao', DEFAULT);
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Poção de Halitose', 100, 2, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Poção de Halitose', 100, 2, 'Pocao', DEFAULT);
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Poção da Coragem Estúpida', 100, 2, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Poção da Coragem Estúpida', 100, 2, 'Pocao', DEFAULT);
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Poção de Veneno Flamejante', 100, 3, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Poção de Veneno Flamejante', 100, 3, 'Pocao', DEFAULT);
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Poção Explosiva Congelante', 100, 3, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Poção Explosiva Congelante', 100, 3, 'Pocao', DEFAULT);
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Poção do Sono', 100, 2, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Poção do Sono', 100, 2, 'Pocao', DEFAULT);
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Poção Ácida Eletrorradioativa', 200, 5, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Poção Ácida Eletrorradioativa', 200, 5, 'Pocao', DEFAULT);
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Coção de Ponfusão', 100, 3, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Coção de Ponfusão', 100, 3, 'Pocao', DEFAULT);
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Isotônico Sabor Enxofre', 200, 2, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Isotônico Sabor Enxofre', 200, 2, 'Pocao', DEFAULT);
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Poção da Amizade', 200, 0, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Poção da Amizade', 200, 0, 'Pocao', 'Confusao');
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Poção da Invisibilidade', 200, 0, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Poção da Invisibilidade', 200, 0, 'Pocao', 'Confusao');
 
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Poção de Polimorfismo', 1300, 0, 'Pocao');
-
-        INSERT INTO pocao (nome, valor, poder, tipo)
-        VALUES ('Água Mineral de Marca', 100, 2, 'Pocao');
+        INSERT INTO pocao (nome, valor, poder, tipo, efeito_pocao)
+        VALUES ('Poção de Polimorfismo', 1300, 0, 'Pocao', 'Confusao');
 
 ----------------------Salas-----------------------------
 
@@ -279,14 +279,14 @@
 
 ----------------------NPCs-----------------------------
 
-    INSERT INTO npc (nome, raca_personagem, tipo)
-    VALUES ('Sir Deno', DEFAULT, 'Npc');
+    INSERT INTO npc (nome, raca, tipo, profissao)
+    VALUES ('Sir Deno', DEFAULT, 'Npc', DEFAULT);
 
-    INSERT INTO npc (nome, raca_personagem, tipo)
-    VALUES ('Bombur', 'Anao', 'Npc');
+    INSERT INTO npc (nome, raca, tipo, profissao)
+    VALUES ('Bombur', 'Anao', 'Npc', 'Vendedor');
 
-    INSERT INTO npc (nome, raca_personagem, tipo)
-    VALUES ('Senhor Cogu', DEFAULT, 'Npc');
+    INSERT INTO npc (nome, raca, tipo, profissao)
+    VALUES ('Senhor Cogu', DEFAULT, 'Npc', DEFAULT);
 
 ----------------------Dialogos-----------------------------
     INSERT INTO dialogo (texto, nivel_da_missao)
@@ -304,4 +304,66 @@
 
 ------------------Sala_conecta_sala--------------------
 
-    
+    -- As conexões das salas, foram feitas de forma linear para facilitar a codificação visto o curto período de tempo.
+
+    --Taverna -> Praça Central
+    INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
+    VALUES (1, 2);
+
+    --Praça Central -> Casa Azul
+    INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
+    VALUES (2, 5);
+
+    --Casa Azul -> Floresta Kovalic
+    INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
+    VALUES (5, 6);
+
+    -- Floresta Kovalic -> Praia de Jackson
+    INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
+    VALUES (6, 7);
+
+    -- Praia de Jackson -> Casa Mal-Assombrada
+    INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
+    VALUES (7, 8);
+
+    -- Casa Mal-Assombrada -> Castelo Destruido
+    INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
+    VALUES (8, 9);
+
+------------------Sala_tem_inimigo-------------------
+
+    -- Somente 4 inimigos como teste
+
+    -- Pit Bull na Casa Azul
+    INSERT INTO sala_tem_inimigo (sala_id, inimigo_id)
+    VALUES (5, 28);
+
+    -- Manticornitorrinco na Floresta Kovalic
+    INSERT INTO sala_tem_inimigo (sala_id, inimigo_id)
+    VALUES (6, 22);
+
+    -- Polvozilla na Praia de Jackson
+    INSERT INTO sala_tem_inimigo (sala_id, inimigo_id)
+    VALUES (7, 2);
+
+    -- Dragão de Plutônio no Castelo Destruido
+    INSERT INTO sala_tem_inimigo (sala_id, inimigo_id)
+    VALUES (9, 28);
+
+-----------------Inimigo_dropa_item------------------
+
+    -- Pit Bull Dropa x
+    -- INSERT INTO Inimigo_dropa_item (inimigo_id, item_id)
+    -- VALUES (28, );
+
+    -- Pit Bull Dropa x
+    -- INSERT INTO Inimigo_dropa_item (inimigo_id, item_id)
+    -- VALUES (28, );
+
+    -- Pit Bull Dropa x
+    -- INSERT INTO Inimigo_dropa_item (inimigo_id, item_id)
+    -- VALUES (28, );
+
+    -- Pit Bull Dropa x
+    -- INSERT INTO Inimigo_dropa_item (inimigo_id, item_id)
+    -- VALUES (28, );

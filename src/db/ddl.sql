@@ -1,10 +1,10 @@
 ------------------Tipos----------------------
 
-CREATE TYPE raca AS ENUM (
+CREATE TYPE tipo_raca AS ENUM (
     'Humano', 'Elfo', 'Halfling', 'Anao'
 );
 
-CREATE TYPE classe AS ENUM (
+CREATE TYPE tipo_classe AS ENUM (
     'Guerreiro', 'Mago', 'Ladrao', 'Clerigo'
 );
 
@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS item (
 --Equipamentos
 CREATE TABLE IF NOT EXISTS equipamento (
 
-    classe_personagem classe DEFAULT NULL,
-    local_armadura tipo_equip DEFAULT NULL,
+    classe tipo_classe DEFAULT NULL,
+    local_equip tipo_equip DEFAULT NULL,
 
     PRIMARY KEY (item_id)
 ) INHERITS (item);
@@ -66,10 +66,9 @@ CREATE TABLE IF NOT EXISTS equipamento (
 --Pocoes
 CREATE TABLE IF NOT EXISTS pocao (
 
-    efeito_pocao tipo_pocao DEFAULT NULL,
+    efeito_pocao tipo_pocao NOT NULL DEFAULT 'Forca',
 
     PRIMARY KEY (item_id)
-
 ) INHERITS (item);
 
 --Salas
@@ -97,7 +96,7 @@ CREATE TABLE IF NOT EXISTS personagem(
 
     personagem_id SERIAL,
     nome VARCHAR(20) NOT NULL,
-    raca_personagem raca NOT NULL DEFAULT 'Humano',
+    raca tipo_raca NOT NULL DEFAULT 'Humano',
     tipo tipo_personagem  NOT NULL DEFAULT 'Jogador',
 
     PRIMARY KEY (personagem_id)
@@ -124,7 +123,7 @@ CREATE TABLE IF NOT EXISTS dialogo (
 --Jogador
 CREATE TABLE IF NOT EXISTS jogador (
 
-    classe_personagem classe NOT NULL,
+    classe tipo_classe NOT NULL,
     nivel INTEGER NOT NULL DEFAULT 1,
     forca_combate INTEGER NOT NULL DEFAULT 1,
     equip_cabeca_id INTEGER DEFAULT NULL,
@@ -167,117 +166,130 @@ CREATE TABLE IF NOT EXISTS inimigo (
 --Possui
 CREATE TABLE IF NOT EXISTS npc_possui_dialogo(
 
-    npc_id SERIAL PRIMARY KEY REFERENCES npc(personagem_id),
+    npc_id SERIAL,
     dialogo_id SERIAL,
 
+    FOREIGN KEY (npc_id) REFERENCES npc(personagem_id),
     FOREIGN KEY (dialogo_id) REFERENCES dialogo(dialogo_id)
 );
 
 --Libera
 CREATE TABLE IF NOT EXISTS missao_libera_dialogo(
 
-    missao_id SERIAL PRIMARY KEY REFERENCES missao(missao_id),
+    missao_id SERIAL,
     dialogo_id SERIAL,
 
+    FOREIGN KEY (missao_id) REFERENCES missao(missao_id),
     FOREIGN KEY (dialogo_id) REFERENCES dialogo(dialogo_id)
 );
 
 --Recompensa
 CREATE TABLE IF NOT EXISTS missao_recompensa_item(
 
-    missao_id SERIAL PRIMARY KEY REFERENCES missao(missao_id),
+    missao_id SERIAL,
     item_id SERIAL,
 
+    FOREIGN KEY (missao_id) REFERENCES missao(missao_id),
     FOREIGN KEY (item_id) REFERENCES item(item_id)
 );
 
 --Desbloqueia
 CREATE TABLE IF NOT EXISTS missao_desbloqueia_missao(
 
-    missao_base_id SERIAL PRIMARY KEY REFERENCES missao(missao_id),
+    missao_base_id SERIAL,
     missao_alvo_id SERIAL,
 
+    FOREIGN KEY (missao_base_id) REFERENCES missao(missao_id),
     FOREIGN KEY (missao_alvo_id) REFERENCES missao(missao_id)
 );
 
 --Guarda
 CREATE TABLE IF NOT EXISTS mochila_guarda_item(
 
-    personagem_id SERIAL PRIMARY KEY REFERENCES mochila(jogador_id),
+    personagem_id SERIAL,
     item_id SERIAL,
 
+    FOREIGN KEY (personagem_id) REFERENCES mochila(jogador_id),
     FOREIGN KEY (item_id) REFERENCES item(item_id)
 );
 
 --Conecta
 CREATE TABLE IF NOT EXISTS sala_conecta_sala(
 
-    sala_base_id SERIAL PRIMARY KEY REFERENCES sala(sala_id),
+    sala_base_id SERIAL,
     sala_alvo_id SERIAL,
 
+    FOREIGN KEY (sala_base_id) REFERENCES sala(sala_id),
     FOREIGN KEY (sala_alvo_id) REFERENCES sala(sala_id)
 );
 
 --Contem
 CREATE TABLE IF NOT EXISTS sala_contem_item(
 
-    sala_id SERIAL PRIMARY KEY REFERENCES sala(sala_id),
+    sala_id SERIAL,
     item_id SERIAL,
 
+    FOREIGN KEY (sala_id) REFERENCES sala(sala_id),
     FOREIGN KEY (item_id) REFERENCES item(item_id)
 );
 
 --Dispoe
 CREATE TABLE IF NOT EXISTS sala_dispoe_objeto(
 
-    sala_id SERIAL PRIMARY KEY REFERENCES sala(sala_id),
+    sala_id SERIAL,
     objeto_id SERIAL,
 
+    FOREIGN KEY (sala_id) REFERENCES sala(sala_id),
     FOREIGN KEY (objeto_id) REFERENCES objeto(objeto_id)
 );
 
 --Acomoda
 CREATE TABLE IF NOT EXISTS sala_acomoda_npc(
 
-    sala_id SERIAL PRIMARY KEY REFERENCES sala(sala_id),
+    sala_id SERIAL,
     npc_id SERIAL,
 
+    FOREIGN KEY (sala_id) REFERENCES sala(sala_id),
     FOREIGN KEY (npc_id) REFERENCES npc(personagem_id)
 );
 
 --Tem
 CREATE TABLE IF NOT EXISTS sala_tem_inimigo(
 
-    sala_id SERIAL PRIMARY KEY REFERENCES sala(sala_id),
+    sala_id SERIAL,
     inimigo_id SERIAL,
 
+    FOREIGN KEY (sala_id) REFERENCES sala(sala_id),
     FOREIGN KEY (inimigo_id) REFERENCES inimigo(inimigo_id)
 );
 
 --Reserva
 CREATE TABLE IF NOT EXISTS objeto_reserva_item(
 
-    objeto_id SERIAL PRIMARY KEY REFERENCES objeto(objeto_id),
+    objeto_id SERIAL,
     item_id SERIAL,
 
+    FOREIGN KEY (objeto_id) REFERENCES objeto(objeto_id),
     FOREIGN KEY (item_id) REFERENCES item(item_id)
 );
 
 --Dropa
 CREATE TABLE IF NOT EXISTS inimigo_dropa_item(
 
-    inimigo_id SERIAL PRIMARY KEY REFERENCES inimigo(inimigo_id),
+    inimigo_id SERIAL,
     item_id SERIAL,
 
+    FOREIGN KEY (inimigo_id) REFERENCES inimigo(inimigo_id),
     FOREIGN KEY (item_id) REFERENCES item(item_id)
 );
 
 --Enfrenta
 CREATE TABLE IF NOT EXISTS jogador_enfrenta_inimigo(
 
-    jogador_id SERIAL PRIMARY KEY REFERENCES jogador(personagem_id),
+    jogador_id SERIAL,
     inimigo_id SERIAL,
     resolvido BOOLEAN NOT NULL DEFAULT false,
 
+    FOREIGN KEY (jogador_id) REFERENCES jogador(personagem_id),
     FOREIGN KEY (inimigo_id) REFERENCES inimigo(inimigo_id)
 );
