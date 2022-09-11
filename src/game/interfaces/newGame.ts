@@ -33,7 +33,13 @@ const newGame = async () => {
     const novoPersonagem: Personagem = new Personagem(nome, racas[raca-1], classes[classe-1]);
 
     const userRepo: userRepository = new userRepository();
-    await userRepo.createUser(novoPersonagem);
+    const newId = await userRepo.createUser(novoPersonagem);
+
+    //Colocando novo ID no personagem criado
+    novoPersonagem.id = Number(newId[0]);
+    console.log(novoPersonagem.id);
+
+    //Chama o início do jogo
 }
 
 export default newGame;
