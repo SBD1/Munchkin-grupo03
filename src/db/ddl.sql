@@ -149,8 +149,7 @@ CREATE TABLE IF NOT EXISTS mochila (
 
     jogador_id INTEGER NOT NULL PRIMARY KEY REFERENCES jogador(personagem_id) ON DELETE RESTRICT,
     capacidade INTEGER NOT NULL DEFAULT 10,
-    total_itens INTEGER NOT NULL DEFAULT 0
-    
+    total_itens INTEGER NOT NULL DEFAULT 0  
 );
 
 --Inimigos
@@ -237,15 +236,6 @@ CREATE TABLE IF NOT EXISTS sala_dispoe_objeto(
     FOREIGN KEY (objeto_id) REFERENCES objeto(objeto_id)
 );
 
---Possui
-CREATE TABLE IF NOT EXISTS sala_possui_jogador(
-
-    sala_id SERIAL PRIMARY KEY REFERENCES sala(sala_id),
-    jogador_id SERIAL,
-
-    FOREIGN KEY (jogador_id) REFERENCES jogador(personagem_id)
-);
-
 --Acomoda
 CREATE TABLE IF NOT EXISTS sala_acomoda_npc(
 
@@ -287,7 +277,7 @@ CREATE TABLE IF NOT EXISTS jogador_enfrenta_inimigo(
 
     jogador_id SERIAL PRIMARY KEY REFERENCES jogador(personagem_id),
     inimigo_id SERIAL,
-    resolvido BOOLEAN,
+    resolvido BOOLEAN NOT NULL DEFAULT false,
 
     FOREIGN KEY (inimigo_id) REFERENCES inimigo(inimigo_id)
 );

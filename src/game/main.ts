@@ -12,11 +12,11 @@ console.log(`%cOpção selecionada: ${opcao}`, 'color: blue; font-weight: bold')
 switch(opcao){
     case 1:
         //Carregar jogo salvo
-        loadGame();
+        await loadGame();
         break;
     case 2:
         //Começar novo jogo
-        newGame();
+        await newGame();
         break;
     //Sair do jogo
     case 0:
