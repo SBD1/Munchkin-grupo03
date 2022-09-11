@@ -16,3 +16,5 @@ await client.connect();
 }
 
 await client.end();
+
+export default client;

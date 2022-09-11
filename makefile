@@ -23,5 +23,5 @@ migrate:
 	docker exec db  psql -U postgres postgres -f dml.sql -o n.out -q teste
 
 start:
-	docker exec -it app deno run --allow-net src/game/main.ts
+	docker exec -it app deno run --allow-net --allow-env src/game/main.ts
 
