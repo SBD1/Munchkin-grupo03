@@ -2,8 +2,6 @@ import printMenu from "./interfaces/mainMenu.ts";
 import loadGame from "./interfaces/loadGame.ts";
 import newGame from "./interfaces/newGame.ts";
 
-let isPlaying = true; //Variável do game loop
-
 await printMenu(); //printMenu é uma funçao assíncrona
 const opcao = Number(prompt('\nDigite o número de uma opção acima, ou 0 para sair do jogo.\n:'));//pegar input do usuário
 
@@ -23,12 +21,5 @@ switch(opcao){
     //Sair do jogo
     case 0:
         console.log('Leaving game...');
-        isPlaying = false;
         break;
-}
-
-//Game loop principal
-while(isPlaying){
-    console.log('playing...');
-    isPlaying = false;
 }

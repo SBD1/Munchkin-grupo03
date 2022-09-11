@@ -124,14 +124,14 @@ CREATE TABLE IF NOT EXISTS dialogo (
 --Jogador
 CREATE TABLE IF NOT EXISTS jogador (
 
-    classe_personagem classe DEFAULT NULL,
+    classe_personagem classe NOT NULL,
     nivel INTEGER NOT NULL DEFAULT 1,
-    forca_combate INTEGER NOT NULL DEFAULT 0,
+    forca_combate INTEGER NOT NULL DEFAULT 1,
     equip_cabeca_id INTEGER DEFAULT NULL,
     equip_arma_id INTEGER DEFAULT NULL,
     equip_armadura_id INTEGER DEFAULT NULL,
     equip_pes_id INTEGER DEFAULT NULL,
-    sala_atual_id INTEGER DEFAULT NULL,
+    sala_atual_id INTEGER DEFAULT 1,
     missao_atual_id INTEGER NOT NULL DEFAULT 1,
     qtd_gold INTEGER NOT NULL DEFAULT 0,
 
