@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS personagem(
     personagem_id SERIAL,
     nome VARCHAR(20) NOT NULL,
     raca_personagem raca NOT NULL DEFAULT 'Humano',
-    tipo tipo_personagem  NOT NULL,
+    tipo tipo_personagem  NOT NULL DEFAULT 'Jogador',
 
     PRIMARY KEY (personagem_id)
 );
