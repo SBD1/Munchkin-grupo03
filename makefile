@@ -1,13 +1,11 @@
 dkc := "docker-compose.yml"
 
-up: 
+up:
 	docker-compose -f ${dkc} build
 	docker-compose -f ${dkc} up
 
-build:
+network:
 	docker network create munchkin
-	docker-compose -f ${dkc} build
-
 
 clean:
 	docker-compose -f ${dkc} kill
@@ -24,4 +22,3 @@ migrate:
 
 start:
 	docker exec -it app deno run --allow-net --allow-env src/game/main.ts
-

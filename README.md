@@ -18,33 +18,43 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 
 ## 🧝 Como jogar?
 
-O projeto conta com um makefile. Para rodar o projeto, o pacote [make](https://www.wikiwand.com/en/Make_(software)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/).
+O projeto conta com um makefile. Para rodar o projeto, o pacote [make](https://www.wikiwand.com/en/Make_(software)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/) e o [docker-compose](https://docs.docker.com/get-started/08_using_compose/).
 ### Rodando o jogo localmente
-#### 1) Caso seja a primeira vez que está rodando o projeto, vá para dentro da pasta _*backend*_. Caso contrário, pule para o 3° passo.
+#### 1) Crie a rede docker.
+
+O comando ```make network``` irá criar a rede com o docker
 ```sh
-cd backend
+make network
 ``` 
 
-#### 2) Instale as dependências do backend
-```sh
-npm install
-```
-#### 3) Crie a rede interna do docker
-```sh
-docker network create munchkin
-```
+#### 2) Subindo os contêineres docker
 
-#### 4) Rode o comando _*up*_ com o pacote make.
+O comando ```make up``` irá subir os contêineres docker com o banco de dados postgres e um servidor deno com instruções
 ```sh
 make up
 ```
+#### 3) Caso seja a primeira vez rodando o jogo, em outro terminal, execute as migrações. Caso contrário, pule para o 4° passo.
 
-#### 5) Em outra janela de terminal, na pasta raiz do projeto, rode o comando _*migrate*_ com o pacote make.
+O comando ```make migrate``` irá realizar a criação das tabelas e inserção dos dados básicos no banco de dados postgres.
 ```sh
 make migrate
 ```
 
-Agora com o banco de dados inicializado, ...
+#### 4) Inicie o jogo.
+
+O comando ```make start``` faz a inicialização do jogo utilizando a runtime do Deno.
+```sh
+make start
+```
+
+#### **_Opcional_** - Caso seja necessário remover os contêineres e limpar os dados, execute o comando a seguir.
+
+O comando ```make clean``` derruba todos os contêineres e faz a remoção das images e dos processos docker.
+```sh
+make clean
+```
+
+> caso tenha executado o comando ```make clean```, será necessário realizar novamente as migrações do banco com o 3° passo.
 
 ## 🦹‍♀️ Tecnologias
 
