@@ -318,15 +318,15 @@
     INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
     VALUES (5, 6);
 
-    -- Floresta Kovalic -> Praia de Jackson
+    --Floresta Kovalic -> Praia de Jackson
     INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
     VALUES (6, 7);
 
-    -- Praia de Jackson -> Casa Mal-Assombrada
+    --Praia de Jackson -> Casa Mal-Assombrada
     INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
     VALUES (7, 8);
 
-    -- Casa Mal-Assombrada -> Castelo Destruido
+    --Casa Mal-Assombrada -> Castelo Destruido
     INSERT INTO sala_conecta_sala (sala_base_id, sala_alvo_id)
     VALUES (8, 9);
 

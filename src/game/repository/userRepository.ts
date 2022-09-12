@@ -3,7 +3,7 @@ import Personagem from "../classes/personagem.ts";
 
 export default class userRepository {
 
-    //Lista todos os jogadores
+    //Lista todos dados de todos os jogadores
     public async listUsers() {
         await client.connect();
         const users = await client.queryObject(`SELECT * FROM jogador`);
@@ -24,7 +24,7 @@ export default class userRepository {
         await client.connect();
         const res = await client.queryArray({
             args: {nome: player.nome, raca: player.raca, classe: player.classe},
-            text: 'INSERT INTO jogador (nome, raca_personagem, classe_personagem) VALUES ($nome, $raca, $classe) RETURNING personagem_id',
+            text: 'INSERT INTO jogador (nome, raca, classe) VALUES ($nome, $raca, $classe) RETURNING personagem_id',
         });
         await client.end();
         return res.rows[0];

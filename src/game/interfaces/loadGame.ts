@@ -1,46 +1,50 @@
-import client from '../../db/connection.ts'
 import userRepository from '../repository/userRepository.ts';
-import inGame from './inGame.ts';
+import PlayGame from './PlayGame.ts';
+import Main from '../main.ts'
 
-const loadGame = async () => {   
-    await client.connect();
+const LoadGame = async () => {   
     // Carrega um jogo
     console.log('Carregando jogo...');
     
-    const userRepo:userRepository = new userRepository();
+    const userRepo: userRepository = new userRepository();
     const userList = await userRepo.listUsers();
-    //console.log(userList.rows);
-    let personagemSelecionado;
 
-    const listTam = userList.rows.length
-    let flag = 1;
+    const listSize: number = userList.rows.length;
 
-    while(flag) {
-        console.log("Selecione o personagem que deseja jogar:");
-        console.log("");
-        
-        userList.rows.forEach((element, index) => {
-            
-            console.log(`[${index}]` , "-", "nome: ", element.nome,"| raça: ", element.raca_personagem, "| nível: ", element.nivel )
-            
-        });
-        
-        const opcao = Number(prompt('\nDigite o número do personagem que deseja jogar: ')); //pegar input do usuário
-
-        if(opcao >= listTam || opcao < 0) {
-            console.clear();
-            console.log("_____________________________________");
-            console.log("%c opção inválida, digite outro valor...", 'color: red; font-weight: bold');
-            console.log("_____________________________________");
-        } else {
-            flag = 0;
-            personagemSelecionado = userList.rows[opcao].personagem_id;
-        }
+    //Caso não exista nenhum personagem na lista
+    if(listSize == 0) {
+        console.clear();
+        console.log('%cNão existem personagens criados, voltando ao menu principal...', 'color: red; font-weight: bold');
+        prompt('Digite Enter para voltar ao menu principal');
+        return;
     }
-    await client.end();
-    // console.log(personagemSelecionado)
 
-    await inGame(personagemSelecionado)
+    console.log('Selecione o personagem que deseja jogar:\n');
+        
+    userList.rows.forEach((element, index) => {
+            
+        console.log(`[${index}] - Nome: ${element.nome}\n\t
+         Raça: ${element.raca}\t
+         Classe: ${element.classe}\t
+         Nível: ${element.nivel}\n`);
+            
+    });
+    console.log('[0] - Voltar ao menu principal');
+
+    //pegar input do usuário
+    const opcao = Number(prompt('\nDigite o número do personagem que deseja jogar:'));
+
+    if(opcao >= listSize || opcao < 0) {
+        console.clear();
+        console.log('%cOpção inválida, digite outro valor...', 'color: red; font-weight: bold');
+        await LoadGame();
+    } else if(opcao == 0) {
+        await Main(); 
+    } else {
+        const personagemSelecionado = userList.rows[opcao-1];
+        console.log(personagemSelecionado);
+        // await PlayGame(personagemSelecionado);
+    }
 }
 
-export default loadGame;
+export default LoadGame;
