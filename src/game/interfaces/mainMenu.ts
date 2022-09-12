@@ -2,7 +2,7 @@
 import figlet from 'https://x.nest.land/deno-figlet@0.0.5/mod.js'
 
 //Mostrar o título do jogo com um menu de opções
-export default async function printMenu(){
+const printMenu = async() => {
     const gameTitle = await figlet('Munchkin');
     console.log(gameTitle);
 
@@ -11,3 +11,5 @@ export default async function printMenu(){
     console.log('\t2) Começar novo jogo');
     console.log('\t0) Sair');
 }
+
+export default printMenu;
