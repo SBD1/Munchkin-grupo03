@@ -1,5 +1,5 @@
 import userRepository from '../repository/userRepository.ts';
-import PlayGame from './PlayGame.ts';
+import PlayGame from './playGame.ts';
 import Main from '../main.ts';
 import Personagem from '../classes/personagem.ts';
 
@@ -46,7 +46,7 @@ const LoadGame = async () => {
     } else {
         const personagemSelecionado = userList[opcao-1]; //Tratar este dado para virar tipo Personagem
         console.log(personagemSelecionado);
-        // await PlayGame(personagemSelecionado);
+        await PlayGame(personagemSelecionado);
     }
 }
 
