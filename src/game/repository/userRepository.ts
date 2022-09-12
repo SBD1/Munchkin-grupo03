@@ -1,14 +1,25 @@
+import { QueryObjectResult } from "https://deno.land/x/postgres@v0.16.1/query/query.ts";
 import client from "../../db/connection.ts";
-import Personagem from "../classes/personagem.ts";
+import Personagem from '../classes/personagem.ts';
+import type equipamentos from '../classes/personagem.ts';
 
 export default class userRepository {
 
     //Lista todos dados de todos os jogadores
     public async listUsers() {
         await client.connect();
-        const users = await client.queryObject(`SELECT * FROM jogador`);
+        const users: QueryObjectResult<{id: number;
+            nome: string;
+            raca: string;
+            classe: string;
+            nivel: number;
+            forcaDeCombate: number;
+            equipamento:equipamentos; //Talvez substituir pelo tipo de cada parte do equipamento
+            missaoAtual: number;
+            salaAtual: number;
+            gold: number;}> = await client.queryObject(`SELECT * FROM jogador`);
         await client.end();
-        return users;
+        return users.rows;
     }
 
     //Busca um jogador com base no ID
