@@ -3,10 +3,10 @@ import userRepository from '../repository/userRepository.ts';
 import salaRepository from '../repository/salaRepository.ts';
 import missaoRepository from '../repository/missaoRepository.ts';
 import Sala from '../classes/sala.ts'
+import Personagem from '../classes/personagem.ts';
 
-const inGame = async (personagemSelecionado) => {
+const PlayGame = async (personagem: Personagem) => {
     console.clear();
-
     await client.connect();
 
     const userRepo: userRepository = new userRepository();
@@ -14,15 +14,15 @@ const inGame = async (personagemSelecionado) => {
     const missaoRepo: missaoRepository = new missaoRepository();
 
     // Jogador
-    const playerData = await userRepo.getUser(personagemSelecionado);
+    //const personagem = await userRepo.getUser(personagem);
 
     // Sala
-    const dadosDaSalaAtual = await salaRepo.getDataRoom(playerData[0].sala_atual_id);
-    const salasConectadasIds = await salaRepo.listRooms(playerData[0].sala_atual_id);
+    const dadosDaSalaAtual = await salaRepo.getDataRoom(personagem.sala_atual_id);
+    const salasConectadasIds = await salaRepo.listRooms(personagem.sala_atual_id);
     console.log(salasConectadasIds)
 
     // Missao
-    const dadosDaMissao = await missaoRepo.dadosDaMissao(playerData[0].missao_atual_id);
+    const dadosDaMissao = await missaoRepo.dadosDaMissao(personagem.missao_atual_id);
 
     const verDescriçãoDaSala = () => {
         console.clear()
@@ -31,22 +31,25 @@ const inGame = async (personagemSelecionado) => {
 
     const olharEmVolta = () => {
         console.clear()
-        let salaConectadas = []
+        let salasConectadas = []
+        console.log(salasConectadasIds)
 
         salasConectadasIds.forEach( async(element, index) => {
-            salasConectadas[index] = await salaRepo.getDataRoom(playerData[0].sala_atual_id);
-            console.log(`você vê o(a) ${salasConectadas[index][0].name }`)
+            console.log(element.sala_alvo_id)
+            salasConectadas = await salaRepo.getDataRoom(element.sala_alvo_id);
         });
+
+        console.log(`${salasConectadas}`)
     }
 
     const verStatus = () => {
         console.clear();
-        console.log(`nome: ${playerData[0].nome}`);
-        console.log(`nivel: ${playerData[0].nivel}`);
-        console.log(`poder: ${playerData[0].poder}`);
-        console.log(`classe: ${playerData[0].classe_personagem}`);
-        console.log(`raça: ${playerData[0].raca}`);
-        console.log(`ouro: ${playerData[0].qtd_gold}`);
+        console.log(`nome: ${personagem.nome}`);
+        console.log(`nivel: ${personagem.nivel}`);
+        console.log(`poder: ${personagem.forca_combate}`);
+        console.log(`classe: ${personagem.classe}`);
+        console.log(`raça: ${personagem.raca}`);
+        console.log(`ouro: ${personagem.qtd_gold}`);
     }
 
     const verMissaoAtual = () => {
@@ -113,4 +116,4 @@ const inGame = async (personagemSelecionado) => {
     await client.end();
 }
 
-export default inGame;
+export default PlayGame;

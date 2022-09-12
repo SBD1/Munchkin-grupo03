@@ -1,5 +1,5 @@
 import userRepository from '../repository/userRepository.ts';
-import PlayGame from './PlayGame.ts';
+import PlayGame from './playGame.ts';
 import Main from '../main.ts'
 
 const LoadGame = async () => {   
@@ -23,7 +23,7 @@ const LoadGame = async () => {
         
     userList.rows.forEach((element, index) => {
             
-        console.log(`[${index}] - Nome: ${element.nome}\n\t
+        console.log(`[${index+1}] - Nome: ${element.nome}\n\t
          Raça: ${element.raca}\t
          Classe: ${element.classe}\t
          Nível: ${element.nivel}\n`);
@@ -34,7 +34,7 @@ const LoadGame = async () => {
     //pegar input do usuário
     const opcao = Number(prompt('\nDigite o número do personagem que deseja jogar:'));
 
-    if(opcao >= listSize || opcao < 0) {
+    if(opcao > listSize || opcao < 0) {
         console.clear();
         console.log('%cOpção inválida, digite outro valor...', 'color: red; font-weight: bold');
         await LoadGame();
@@ -43,7 +43,7 @@ const LoadGame = async () => {
     } else {
         const personagemSelecionado = userList.rows[opcao-1];
         console.log(personagemSelecionado);
-        // await PlayGame(personagemSelecionado);
+        await PlayGame(personagemSelecionado);
     }
 }
 
