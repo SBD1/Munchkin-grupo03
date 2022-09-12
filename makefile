@@ -17,11 +17,11 @@ clean:
 	@echo "Containers Docker foram parados e deletados."
 
 migrate:
-	docker cp backend/src/game/ddl.sql db:/
-	docker cp backend/src/game/dml.sql db:/
+	docker cp ./src/db/ddl.sql db:/
+	docker cp ./src/db/dml.sql db:/
 	docker exec db  psql -U postgres postgres -f ddl.sql -o n.out -q teste
 	docker exec db  psql -U postgres postgres -f dml.sql -o n.out -q teste
 
 start:
-	docker exec -it app bash
+	docker exec -it app deno run --allow-net --allow-env src/game/main.ts
 

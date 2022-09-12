@@ -49,6 +49,7 @@ Agora com o banco de dados inicializado, ...
 ## 🦹‍♀️ Tecnologias
 
 <div align=center>
+    <img src="https://img.icons8.com/color/48/000000/deno.png"/>
     <img src="https://img.icons8.com/fluency/48/000000/typescript.png"/>
     <img src="https://img.icons8.com/color/48/000000/postgreesql.png"/>
 </div>
