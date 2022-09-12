@@ -1,5 +1,5 @@
 import userRepository from '../repository/userRepository.ts';
-import PlayGame from './PlayGame.ts';
+import PlayGame from './playGame.ts';
 import Main from '../main.ts';
 import Personagem from '../classes/personagem.ts';
 

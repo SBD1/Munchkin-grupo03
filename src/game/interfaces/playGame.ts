@@ -39,7 +39,7 @@ const PlayGame = async (personagem: Personagem) => {
             salasConectadas = await salaRepo.getDataRoom(element.sala_alvo_id);
         });
 
-        console.log(`${salasConectadas}`)
+        console.log(`${salasConectadas}`, "AKIII")
     }
 
     const verStatus = () => {
