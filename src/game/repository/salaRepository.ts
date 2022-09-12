@@ -13,6 +13,7 @@ export default class salaRepository {
 
     //Busca dados da sala
     public async getDataRoom(sala_id: number) {
+        console.log(sala_id, "teste")
         await client.connect();
         const room = await client.queryObject(`SELECT * FROM sala WHERE sala_id = ${sala_id}`);
         await client.end();
