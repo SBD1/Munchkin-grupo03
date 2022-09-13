@@ -20,11 +20,14 @@ const PlayGame = async (personagem: Personagem) => {
 
     // Sala
     let dadosDaSalaAtual = await salaRepo.getDataRoom(personagem_atual.sala_atual_id);
-    const salasConectadasIds = await salaRepo.listRooms(personagem_atual.sala_atual_id);
+    let salasConectadasIds = await salaRepo.listRooms(personagem_atual.sala_atual_id);
     // console.log(salasConectadasIds)
 
     // Missao
     const dadosDaMissao = await missaoRepo.dadosDaMissao(personagem_atual.missao_atual_id);
+
+    // Inimigo
+    let dadosDoInimigo;
 
     const verDescriçãoDaSala = () => {
         console.clear()
@@ -54,39 +57,46 @@ const PlayGame = async (personagem: Personagem) => {
     const escolhersaida = async (salasConectadas) => {
         console.clear()
 
-        salasConectadas.forEach((salaElement, index)=>{
-            console.log(`[${index+1}] - Ir para ${salaElement.nome}`);
+        salasConectadas.forEach((salaElement, index) => {
+            console.log(`[${index + 1}] - Ir para ${salaElement.nome}`);
         })
 
         const opcao = Number(prompt('\nescolha para onde deseja ir? ')); //pegar input do usuário
 
-        if(opcao > salasConectadas.length || opcao < 0){
+        if (opcao > salasConectadas.length || opcao < 0) {
             console.log("opção inválida...");
         } else {
-            console.log(salasConectadas[opcao-1].sala_id)
-            const atual = await userRepo.updateUser(personagem_atual.personagem_id, salasConectadas[opcao-1].sala_id)
+            console.log(salasConectadas[opcao - 1].sala_id)
+            const atual = await userRepo.updateUser(personagem_atual.personagem_id, salasConectadas[opcao - 1].sala_id)
             console.log(atual)
             personagem_atual = atual[0]
             dadosDaSalaAtual = await salaRepo.getDataRoom(personagem_atual.sala_atual_id);
+            salasConectadasIds = await salaRepo.listRooms(personagem_atual.sala_atual_id);
         }
 
+    }
+
+    const enfrentarMonstro = async (monstro) => {
+        // console.log(monstro)
+        if(monstro.poder >= personagem_atual.forca_combate) {
+            await userRepo.jogadorMorreu(personagem_atual.personagem_id, monstro.inimigo_id)
+        } else {
+            await userRepo.jogadorDerrotou(personagem_atual.personagem_id, monstro.inimigo_id)
+            console.log(`Voce derrotou o ${monstro.nome}!\n`)
+        }
     }
 
     const verOpcoesDeSaida = async () => {
         console.clear()
         let salasConectadas = [];
-        console.log(salasConectadasIds[0].sala_alvo_id)
+        // console.log(salasConectadasIds[0].sala_alvo_id)
 
-        for(const element of salasConectadasIds) {
+        for (const element of salasConectadasIds) {
             const sala = await salaRepo.getDataRoom(element.sala_alvo_id);
             salasConectadas.push(sala[0])
         }
 
         await escolhersaida(salasConectadas)
-        
-    }
-
-    const listarComandos = () => {
 
     }
 
@@ -94,6 +104,13 @@ const PlayGame = async (personagem: Personagem) => {
     console.log(`Você está no(a) ${dadosDaSalaAtual[0].nome}: ${dadosDaSalaAtual[0].descricao}.`)
 
     while (flag) {
+
+        dadosDoInimigo = await salaRepo.getEnemyRoom(dadosDaSalaAtual[0].sala_id, personagem_atual.personagem_id)
+        if (dadosDoInimigo.length > 0) {
+            // console.log(dadosDoInimigo[0])
+            console.log(`\nUm ${dadosDoInimigo[0].nome} esta na sua frente!`);
+        }
+
 
         console.log("====================");
         console.log("=       ('-')      =");
@@ -111,31 +128,25 @@ const PlayGame = async (personagem: Personagem) => {
 
         const opcao = Number(prompt('\nOque deseja fazer?: ')); //pegar input do usuário
 
-        if(opcao == 1) {
+        if (opcao == 1) {
             olharEmVolta();
-        } else if(opcao == 2) {
-            console.clear();
-            console.log('Sem inimigos nessa área...')
-        } else if(opcao == 3) {
+        } else if (opcao == 2) {
+            await enfrentarMonstro(dadosDoInimigo[0])
+        } else if (opcao == 3) {
             verStatus();
-        } else if(opcao == 4) {
+        } else if (opcao == 4) {
             verMissaoAtual();
-        } else if(opcao == 5) {
+        } else if (opcao == 5) {
             verDescriçãoDaSala();
-        } else if(opcao == 6) {
+        } else if (opcao == 6) {
             await verOpcoesDeSaida();
-        } else if(opcao == 0) {
+        } else if (opcao == 0) {
             return
         } else {
             console.clear()
             console.log("Não entendi... oque deseja fazer?")
         }
-
-
-
     }
-
-
 
     await client.end();
 }

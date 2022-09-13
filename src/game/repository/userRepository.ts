@@ -48,5 +48,25 @@ export default class userRepository {
         await client.end();
         return res.rows[0];
     }
+
+    public async jogadorMorreu(player_id: number, monster_id: number) {
+        await client.connect();
+        const res = await client.queryArray({
+            args: {jogador_id: player_id, inimigo_id: monster_id, resolvido: false},
+            text: 'INSERT INTO jogador_enfrenta_inimigo (jogador_id, inimigo_id, resolvido) VALUES ($jogador_id, $inimigo_id, $resolvido) RETURNING jogador_id',
+        });
+        await client.end();
+        return res.rows[0];
+    }
+
+    public async jogadorDerrotou(player_id: number, monster_id: number) {
+        await client.connect();
+        const res = await client.queryArray({
+            args: {jogador_id: player_id, inimigo_id: monster_id, resolvido: true},
+            text: 'INSERT INTO jogador_enfrenta_inimigo (jogador_id, inimigo_id, resolvido) VALUES ($jogador_id, $inimigo_id, $resolvido) RETURNING jogador_id',
+        });
+        await client.end();
+        return res.rows[0];
+    }
     
 }
