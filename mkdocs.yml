@@ -24,13 +24,24 @@ nav:
                 - MER: MER/MERv2_Munchkin.md
                 - DER: DER/DERv2_Munchkin.md
           - SQL:
-                - DDL: SQL/ddl.sql
-                - DML: SQL/dml.sql
+                - DDL: SQL/modulo2/ddl.sql
+                - DML: SQL/modulo2/dml.sql
     - Modulo 3:
-            - Modelagem:
-                - MER: SQL/ddl.sql
-                - DER: SQL/dml.sql
-            - SQL:
-                - DDL:
-                - DML:
-                - Triggers & Stored Procedures: 
+          - Modelagem:
+                - MER: MER/MERv2_Munchkin.md
+                - DER: DER/DERv3_Munchkin.md
+          - SQL:
+                - DDL: SQL/modulo3/ddl.sql
+                - DML: SQL/modulo3/dml.sql
+                - Triggers & Stored Procedures: SQL/modulo3/triggersSP.sql
+                - Transactions: SQL/modulo3/transactions.sql
+          - Vídeo de apresentação: videos/modulo3.md
+    - Modulo 4:
+          - Modelagem:
+                - MER: MER/MERv2_Munchkin.md
+                - DER: DER/DERv4_Munchkin.md
+          - SQL:
+                - DDL: SQL/modulo4/ddl.sql
+                - DML: SQL/modulo4/dml.sql
+                - Triggers & Stored Procedures: SQL/modulo4/triggersSP.sql
+          - Vídeo de apresentação: videos/modulo4.md
