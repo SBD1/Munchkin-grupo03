@@ -30,12 +30,40 @@ export default class userRepository {
         return user.rows;
     }
 
+    public async updateUser(player_id: number, nova_sala_atual_id: number) {
+        await client.connect();
+        await client.queryObject(`UPDATE jogador SET sala_atual_id=${nova_sala_atual_id} WHERE personagem_id = ${player_id}`);
+        const user = await client.queryObject(`SELECT * FROM jogador WHERE personagem_id = ${player_id}`);
+        await client.end();
+        return user.rows;
+    }
+
     //Criar um jogador
     public async createUser(player: Personagem) {
         await client.connect();
         const res = await client.queryArray({
             args: {nome: player.nome, raca: player.raca, classe: player.classe},
             text: 'INSERT INTO jogador (nome, raca, classe) VALUES ($nome, $raca, $classe) RETURNING personagem_id',
+        });
+        await client.end();
+        return res.rows[0];
+    }
+
+    public async jogadorMorreu(player_id: number, monster_id: number) {
+        await client.connect();
+        const res = await client.queryArray({
+            args: {jogador_id: player_id, inimigo_id: monster_id, resolvido: false},
+            text: 'INSERT INTO jogador_enfrenta_inimigo (jogador_id, inimigo_id, resolvido) VALUES ($jogador_id, $inimigo_id, $resolvido) RETURNING jogador_id',
+        });
+        await client.end();
+        return res.rows[0];
+    }
+
+    public async jogadorDerrotou(player_id: number, monster_id: number) {
+        await client.connect();
+        const res = await client.queryArray({
+            args: {jogador_id: player_id, inimigo_id: monster_id, resolvido: true},
+            text: 'INSERT INTO jogador_enfrenta_inimigo (jogador_id, inimigo_id, resolvido) VALUES ($jogador_id, $inimigo_id, $resolvido) RETURNING jogador_id',
         });
         await client.end();
         return res.rows[0];
