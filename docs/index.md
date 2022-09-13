@@ -3,7 +3,6 @@
 </div>
 
 #
-(Documentação)[https://sbd1.github.io/Munchkin-grupo03/]
 
 ## 🎯 Objetivo
 
