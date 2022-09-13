@@ -14,6 +14,7 @@ const Main = async () => {
         case 1:
             //Carregar jogo salvo
             await LoadGame();
+            await Main();
             break;
         case 2:
             //Começar novo jogo

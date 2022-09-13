@@ -18,16 +18,16 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 
 ## 🧝 Como jogar?
 
-O projeto conta com um makefile. Para rodar o projeto, o pacote [make](https://www.wikiwand.com/en/Make_(software)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/) e o [docker-compose](https://docs.docker.com/get-started/08_using_compose/).
-### Rodando o jogo localmente
-#### 1) Crie a rede docker.
+O projeto conta com um makefile. Para rodar o projeto, o pacote make([linux](https://linuxhint.com/install-make-ubuntu/https://community.chocolatey.org/packages/make) | [windows](https://community.chocolatey.org/packages/make)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/) e o [docker-compose](https://docs.docker.com/get-started/08_using_compose/).
+### Rodando o jogo
+#### 1) Caso seja a primeira vez rodando o jogo, crie a rede docker.
 
 O comando ```make network``` irá criar a rede com o docker
 ```sh
 make network
 ``` 
 
-#### 2) Subindo os contêineres docker
+#### 2) Subindo os contêineres docker.
 
 O comando ```make up``` irá subir os contêineres docker com o banco de dados postgres e um servidor deno com instruções
 ```sh

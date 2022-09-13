@@ -17,7 +17,7 @@ const LoadGame = async () => {
         console.clear();
         console.log('%cNão existem personagens criados, voltando ao menu principal...', 'color: red; font-weight: bold');
         prompt('Digite Enter para voltar ao menu principal');
-        await Main();
+        return;
     }
 
     console.log(userList[0].nome);
@@ -35,7 +35,7 @@ const LoadGame = async () => {
     console.log('[0] - Voltar ao menu principal');
 
     //pegar input do usuário
-    const opcao = Number(prompt('\nDigite o número do personagem que deseja jogar:'));
+    let opcao = Number(prompt('\nDigite o número do personagem que deseja jogar:'));
 
     if(opcao > listSize || opcao < 0) {
         console.clear();
@@ -44,7 +44,11 @@ const LoadGame = async () => {
     } else if(opcao == 0) {
         await Main();
     } else {
-        const personagemSelecionado = userList[opcao-1]; //Tratar este dado para virar tipo Personagem
+        opcao -= 1;
+
+        //Inicialização do personagem
+        const personagemSelecionado = new Personagem(userList[opcao].nome, userList[opcao].raca, userList[opcao].classe);
+        
         console.log(personagemSelecionado);
         await PlayGame(personagemSelecionado);
     }
