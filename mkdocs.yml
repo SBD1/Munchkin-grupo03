@@ -26,3 +26,11 @@ nav:
           - SQL:
                 - DDL: SQL/ddl.sql
                 - DML: SQL/dml.sql
+    - Modulo 3:
+            - Modelagem:
+                - MER: SQL/ddl.sql
+                - DER: SQL/dml.sql
+            - SQL:
+                - DDL:
+                - DML:
+                - Triggers & Stored Procedures: 
