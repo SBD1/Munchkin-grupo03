@@ -37,7 +37,7 @@ const newGame = async () => {
 
     //Colocando novo ID no personagem criado
     novoPersonagem.id = Number(newId[0]);
-    console.log(novoPersonagem.id);
+    // console.log(novoPersonagem.id);
 
     //Chama o início do jogo
 }
