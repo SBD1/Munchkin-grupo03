@@ -20,8 +20,6 @@ const LoadGame = async () => {
         return;
     }
 
-    console.log(userList[0].nome);
-
     console.log('Selecione o personagem que deseja jogar:\n');
         
     userList.forEach((element, index) => {

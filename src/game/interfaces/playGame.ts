@@ -68,7 +68,7 @@ const PlayGame = async (personagem: Personagem) => {
         } else {
             console.log(salasConectadas[opcao - 1].sala_id)
             const atual = await userRepo.updateUser(personagem_atual.personagem_id, salasConectadas[opcao - 1].sala_id)
-            console.log(atual)
+            // console.log(atual)
             personagem_atual = atual[0]
             dadosDaSalaAtual = await salaRepo.getDataRoom(personagem_atual.sala_atual_id);
             salasConectadasIds = await salaRepo.listRooms(personagem_atual.sala_atual_id);
@@ -78,11 +78,17 @@ const PlayGame = async (personagem: Personagem) => {
 
     const enfrentarMonstro = async (monstro) => {
         // console.log(monstro)
-        if(monstro.poder >= personagem_atual.forca_combate) {
+        if(monstro == null) {
+            console.log("não há inimigos nessa sala");
+            return;
+        }
+
+        if(monstro.poder <= personagem_atual.forca_combate) {
             await userRepo.jogadorMorreu(personagem_atual.personagem_id, monstro.inimigo_id)
+            console.log(`Voce morreu!\n`)
         } else {
             await userRepo.jogadorDerrotou(personagem_atual.personagem_id, monstro.inimigo_id)
-            console.log(`Voce derrotou o ${monstro.nome}!\n`)
+            console.log(`Voce derrotou o ${monstro.nome}!\n`);
         }
     }
 
