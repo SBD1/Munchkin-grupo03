@@ -18,7 +18,7 @@ Este projeto tem como objetivo principal ser objeto de avaliação pelo professo
 
 ## 🧝 Como jogar?
 
-O projeto conta com um makefile. Para rodar o projeto, o pacote make([linux](https://linuxhint.com/install-make-ubuntu/https://community.chocolatey.org/packages/make) | [windows](https://community.chocolatey.org/packages/make)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/) e o [docker-compose](https://docs.docker.com/get-started/08_using_compose/).
+O projeto conta com um makefile. Para rodar o projeto, o pacote make([linux](https://linuxhint.com/install-make-ubuntu/) | [windows](https://community.chocolatey.org/packages/make)) deve estar instalado na máquina juntamente com o [docker](https://www.docker.com/) e o [docker-compose](https://docs.docker.com/get-started/08_using_compose/).
 ### Rodando o jogo
 #### 1) Caso seja a primeira vez rodando o jogo, crie a rede docker.
 
