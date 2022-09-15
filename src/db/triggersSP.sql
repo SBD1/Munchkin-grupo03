@@ -49,3 +49,24 @@ END;
 $$ LANGUAGE PLPGSQL;
 
 CREATE OR REPLACE TRIGGER inimigo_morreu AFTER INSERT ON jogador_enfrenta_inimigo FOR EACH ROW EXECUTE PROCEDURE inimigo_morto_func();
+
+--- Game Over ---
+
+CREATE OR REPLACE FUNCTION game_over_func() RETURNS TRIGGER AS $$
+
+DECLARE 
+    viewl_resolvido BOOLEAN;
+
+BEGIN
+    SELECT resolvido FROM jogador_enfrenta_inimigo WHERE resolvido = false INTO viewl_resolvido;
+    IF viewl_resolvido = false THEN
+        DELETE FROM personagem WHERE jogador_id = NEW.jogador_id;
+        DELETE FROM mochila WHERE jogador_id = NEW.jogador_id;
+    END IF;    
+    RETURN NEW;
+END;
+$$ LANGUAGE PLPGSQL;
+
+CREATE OR REPLACE TRIGGER game_over AFTER UPDATE ON jogador_enfrenta_inimigo FOR EACH ROW EXECUTE PROCEDURE game_over_func();
+
+
