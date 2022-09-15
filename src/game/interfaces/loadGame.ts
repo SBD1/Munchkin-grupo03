@@ -45,9 +45,9 @@ const LoadGame = async () => {
         opcao -= 1;
 
         //Inicialização do personagem
-        const personagemSelecionado = new Personagem(userList[opcao].nome, userList[opcao].raca, userList[opcao].classe);
+        const personagemSelecionado = new Personagem(userList[opcao].personagem_id, userList[opcao].nome, userList[opcao].raca, userList[opcao].classe);
         
-        console.log(personagemSelecionado);
+        //console.log(personagemSelecionado);
         await PlayGame(personagemSelecionado);
     }
 }

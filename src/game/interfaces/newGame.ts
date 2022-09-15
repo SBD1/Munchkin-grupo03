@@ -1,5 +1,6 @@
 import Personagem from '../classes/personagem.ts';
 import userRepository from '../repository/userRepository.ts';
+import Main from '../main.ts'
 
 const newGame = async () => {
     
@@ -30,7 +31,7 @@ const newGame = async () => {
     const classe = Number(prompt('Qual a classe do seu personagem ?'));
     console.clear();
     
-    const novoPersonagem: Personagem = new Personagem(nome, racas[raca-1], classes[classe-1]);
+    const novoPersonagem: Personagem = new Personagem(-1 ,nome, racas[raca-1], classes[classe-1]);
 
     const userRepo: userRepository = new userRepository();
     const newId = await userRepo.createUser(novoPersonagem);
@@ -40,6 +41,9 @@ const newGame = async () => {
     // console.log(novoPersonagem.id);
 
     //Chama o início do jogo
+
+    Main();
+
 }
 
 export default newGame;

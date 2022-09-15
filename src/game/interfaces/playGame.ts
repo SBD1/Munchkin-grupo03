@@ -18,6 +18,8 @@ const PlayGame = async (personagem: Personagem) => {
     // Jogador
     let personagem_atual = personagem
 
+    // console.log(personagem_atual);
+
     // Sala
     let dadosDaSalaAtual = await salaRepo.getDataRoom(personagem_atual.sala_atual_id);
     let salasConectadasIds = await salaRepo.listRooms(personagem_atual.sala_atual_id);
@@ -45,7 +47,7 @@ const PlayGame = async (personagem: Personagem) => {
         console.log(`poder: ${personagem_atual.forca_combate}`);
         console.log(`classe: ${personagem_atual.classe}`);
         console.log(`raça: ${personagem_atual.raca}`);
-        console.log(`ouro: ${personagem_atual.qtd_gold}`);
+        console.log(`ouro: ${personagem_atual.qnt_gold}`);
         console.log(`sala: ${personagem_atual.sala_atual_id}`);
     }
 
@@ -66,12 +68,19 @@ const PlayGame = async (personagem: Personagem) => {
         if (opcao > salasConectadas.length || opcao < 0) {
             console.log("opção inválida...");
         } else {
-            console.log(salasConectadas[opcao - 1].sala_id)
+            // console.log(salasConectadas[opcao - 1].sala_id)
             const atual = await userRepo.updateUser(personagem_atual.personagem_id, salasConectadas[opcao - 1].sala_id)
-            // console.log(atual)
+            // console.log(atual, "AKIIII")
             personagem_atual = atual[0]
             dadosDaSalaAtual = await salaRepo.getDataRoom(personagem_atual.sala_atual_id);
             salasConectadasIds = await salaRepo.listRooms(personagem_atual.sala_atual_id);
+        }
+
+        if(personagem_atual.sala_atual_id === 9) {
+
+            console.log("\n\nPARABENS VOCÊ ZEROU O JOGO!\n\n")
+            flag=0;
+            const fim = Number(prompt('\naperte entar para seguir... ')); //pegar input do usuário
         }
 
     }
